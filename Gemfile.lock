@@ -34,6 +34,8 @@ GEM
     columnize (0.3.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    faker (0.9.4)
+      i18n (~> 0.4)
     i18n (0.5.0)
     linecache19 (0.5.11)
       ruby_core_source (>= 0.1.4)
@@ -88,6 +90,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  faker
   rails (= 3.0.3)
   ruby-debug19
   sqlite3-ruby

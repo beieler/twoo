@@ -1,2 +1,39 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+            <h1>Welcome</h1>
+            
+	    <p> <%= Faker::Lorem.paragraph %> </p>
+            
+            <ul class="homeRight">
+            <li>
+            	<ul class="hover">
+                    <li>
+                        <h2>Sign In to Contribute</h2>
+                        <p><img src="/images/placeholder.gif" width="250" height="150" class="left" />
+                          <%= Faker::Lorem.paragraph %>
+                        </p>
+                        <a href="contribute_login_createaccount.html" class="more">Read More &raquo;</a>
+                        
+                    </li>
+                </ul>
+            </li>    
+            </ul> 
+            <ul class="homeLeft">
+            <li>
+            	<ul class="hover">
+                    <li>
+                        <h2>Create a Book</h2>
+                        <p><img src="/images/placeholder.gif" width="250" height="150" class="left" />
+                          <%= Faker::Lorem.paragraph %>
+                        </p> <a href="createBook_login.html" class="more">Read More &raquo;</a>
+                    </li>                
+                </ul>
+                <ul class="hover">
+                    <li>
+                        <h2>See Book Examples</h2>
+                        <p><img src="/images/placeholder.gif" width="180" height="150" class="left" />
+                          <%= Faker::Lorem.paragraph %>
+                        </p> <a href="bookExamples.html" class="more">Read More  &raquo;</a>
+                        
+                    </li>
+                </ul>
+            </ul>  				 
+		</div><!---end changingContent content area--->  

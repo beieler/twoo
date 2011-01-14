@@ -48,7 +48,7 @@ Twoo::Application.routes.draw do
   #     resources :products
   #   end
 
-  root :to => "home#index"
+  #root :to => "home#index" # WHEN WE GO LIVE!
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
