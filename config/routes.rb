@@ -1,4 +1,6 @@
 Twoo::Application.routes.draw do
+  resources :accounts
+
   devise_for :users
 
   get "home/index"
