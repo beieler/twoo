@@ -1,5 +1,16 @@
 Twoo::Application.routes.draw do
   get "home/index"
+  get "home/howItWorks"
+  get "home/bookExamples"
+  get "home/faqs"
+  get "home/pricingAndShipping"
+  get "home/ourStory"
+  get "home/ourGiving"
+  get "home/privacyPolicy"
+  get "home/contactUs"
+  get "home/ourGuarantee"
+  get "home/terms"
+  get "home/pressArticle"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
