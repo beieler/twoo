@@ -1,82 +1,18 @@
-            <h1>Create An Account</h1> 
-            
-            <p><%= Faker::Lorem.paragraph 3 %></p>           
-            
+<h2>Sign up</h2>
+
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-      <table cellspacing="1" cellpadding="0" border="0" class="edit small">
-        <tr>
-          <td colspan="2" class="tableHeadColor">
-            New Account Sign Up
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" class="requiredKey">
-            <span class="required">* </span>
-            Required
-          </td>
-        </tr>
+  <p><%= f.label :email %><br />
+  <%= f.text_field :email %></p>
 
-        <tr>
-          <td class="label">
-            <label for="name">
-                 <span class="required">* </span>
-                 Name:
-            </label>
-          </td>
-          <td class="field">
-            <input name="name" type="" id="name" maxlength="200" value="" class="smallText" />
-          </td>
-        </tr>
-       	<tr>
-          <td class="label">
-            <span class="required">* </span>
-<%= f.label :email, 'Email Address:' %>
-          </td>
-          <td class="field">
-<%= f.email_field :email, :maxlength=>"200", :class=>"smallText" %>
-          </td>
-        </tr>
-        <tr>
-          <td class="label">
-            <span class="required">* </span>
-<%= f.label :password, 'Password:' %>
-          </td>
-          <td class="field">
-<%= f.password_field :password, :maxlength=>"200", :class=>"smallText" %>
-          </td>
-        </tr>
-        <tr>
-          <td class="label">
-            <span class="required">* </span>
-<%= f.label :password_confirmation, 'Verify Password:' %>
-          </td>
-          <td class="field">
-<%= f.password_field :password_confirmation, :maxlength=>"200", :class=>"smallText" %>
-          </td>
-        </tr>
-        <tr>
-          <td class="field" colspan="2">
-<%= f.check_box :terms %>
-            <a href="/home/terms">
-I agree to the Terms and Conditions ...
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td class="submit" colspan="2">
-            <%= f.submit "Submit" %>
-          </td>
-        </tr>  
+  <p><%= f.label :password %><br />
+  <%= f.password_field :password %></p>
+
+  <p><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></p>
+
+  <p><%= f.submit "Sign up" %></p>
 <% end %>
-      </table>
-            
-      <div style="float:left;display:inline;width:400px;margin-left:25px;">
-        <h2><%= Faker::Lorem.sentence %></h2>
-        <p><%= Faker::Lorem.paragraph 17 %></p>
-            
-      </div>
-
 
 <%= render :partial => "devise/shared/links" %>
