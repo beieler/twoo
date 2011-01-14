@@ -11,6 +11,7 @@ Twoo::Application.routes.draw do
   get "home/ourGuarantee"
   get "home/terms"
   get "home/pressArticle"
+  get "home/bookExampleDetail"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

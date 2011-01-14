@@ -61,4 +61,9 @@ class HomeControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get bookExampleDetail" do
+    get :bookExampleDetail
+    assert_response :success
+  end
+
 end
