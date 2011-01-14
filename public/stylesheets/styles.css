@@ -1,0 +1,316 @@
+/******************************************************************************************************************/
+/******** RESET STYLESHEET IS A MODIFIED VERSION OF ERIC MEYER'S 'RESET RELOADED STYLESHEET ************************/
+/******************************************************************************************************************/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0; outline:0;font-weight: normal;font-style:inherit;font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height:18px;text-align:left;}
+
+:focus {outline: 0;}
+
+input, textarea {font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height:18px;}
+
+ul, ol {list-style:none;}
+caption {text-align:left;font-weight:normal;}
+em {font-style:italic;}
+strong {font-weight:bold;}
+sup {font-size:0.7em;vertical-align:top;}
+
+blockquote:before, blockquote:after, q:before, q:after {content: "";}
+blockquote, q {quotes:"" "";}
+
+/* remove borders from linked images */
+a img {border:none;}
+
+/* tables still need cellspacing to match in the markup */
+table {border-collapse:separate;border-spacing:1px;}
+th, td {text-align:left;font-weight:normal;vertical-align:top;}
+
+
+/******************************************************************************************************************/
+/**************************************** * GLOBAL PREDICTABLE ELEMENTS * ******************************************/
+/******************************************************************************************************************/
+
+/* Someday, this might do something: html {background: #333;} */
+body {background: #333;}
+
+/* default header styles */
+h1, h2, h3, h4, h5, h6, h1.span {font-family:"Trebuchet MS", Tahoma, sans-serif;color: #453128;margin:0;}
+h1 {font-size: 2.2em;line-height:1em;margin:15px 0 5px;}
+h2 {font-size: 1.5em;margin:20px 0 5px;padding:4px 0 4px 10px;color:#453128;background:#ede8d2;border:1px solid #efefef;border-right:2px solid #f5f5f5;border-bottom:2px solid #f5f5f5;}
+h3 {font-size: 1.1em;margin:20px 0 5px 0;font-weight:bold;border-bottom:1px dotted #ccc;color:#666;}
+
+h1 span {font-size:.55em;vertical-align:middle;}
+.sig {font-weight:bold;margin:20px 0 20px 20px;color: #453128;}
+
+/* default link styles */
+a, a:visited, a:focus {color:#453128;text-decoration:none;}
+a:hover, a.note:hover {color:#333;text-decoration:underline;}
+
+/* default text styles */
+p {margin:8px 0 8px 0;}
+
+.note, a.note , .dateline {font-size: .85em;color:#666;}
+a.note {display:block;}
+
+img.left {float:left;display:inline;margin: 0 10px 5px 0;border:1px solid #ccc;}
+img.right {float:right;display:inline;margin-left:5px;border:1px solid #ccc;}
+img.pdf {float:left;display:inline;margin-right:5px;}
+img.icon {vertical-align:middle;}
+
+#changingContent ul.bullets, #changingContent ol.bullets {list-style:disc;margin-left:50px;}
+#changingContent ul.bullets li, #changingContent ol.bullets li {margin-bottom:4px;}
+
+
+a.back, a.more, a.right, a.round {display:inline-block;/*width:90px;*/height:16px;margin:0 0 20px 0;padding:0 15px;font-size:12px;line-height:16px;text-align:center;text-decoration:none;font-weight:bold;background:#ede8d2;border:1px solid #dfd5b9;border-bottom: 2px solid #dfd5b9; border-right: 2px solid #dfd5b9;color:#453128;}
+a.back:hover, a.more:hover, a.right:hover, a.round:hover {background:#efefef;border-color:#ccc;}
+
+a.more {clear:both;margin:0 5px;}
+
+a.right {float:right;}
+
+.clear {clear:both;}
+
+/******************************************************************************************************************/
+/****************************************GLOBAL LAYOUT ELEMENTS ****************************************************/
+/******************************************************************************************************************/
+
+
+#wrapper {width:950px;margin:30px auto;}/* wraps entirety, defines width and margins for site */
+#content {float:left;display:inline;width:950px;margin-bottom:40px;background:transparent;}/* wraps entirety */
+
+/* header graphic, link */
+#header {float:left;display:inline;width:948px;margin-bottom:10px;border:1px solid #dfd5b9;background:#fff;}
+#header .title a {float:left;display:inline;width:370px;height:130px;padding:5px 10px;padding-left:30px;color:#453128;font-size:32px;line-height:130px;text-decoration:none;}
+	
+
+/* log in / log out and your account */
+ul.logOut {float:right;display:inline;width:440px;margin:5px 30px 0;}
+ul.logOut li.admin {margin-right:30px;}
+
+/* header action links */
+ul.actionItems {float:right;display:inline;width:240px;margin-top:45px;margin-right:20px;}	
+	
+	
+/* menu / navigation */
+#menu {float:right;display:inline;width:950px;padding:7px 0;/*background: #efefef url(../images/bg_bars.gif) repeat-x;*/ background:transparent;}
+#menu ul.topNav {width:900px;margin-left:50px;}		
+		
+/* logOut and footer li formatting styles */
+ul.logOut li, #menu ul.topNav li, ul.actionItems li, #menu ul.topNav li, #footer ul li {float:left;display:inline;position:relative;margin-left:3px;margin-bottom:-1px;}			
+			
+/* logOut and footer link styles */
+ul.logOut li a {padding: 6px 15px 3px;background:#dfd5b9;border:1px solid #ede8d2;border-right: 2px solid #ede8d2;border-bottom: 0;font-size:12px;height:21px;line-height:20px;font-weight:bold;text-decoration:none;}		 	
+ul.logOut li a:hover, ul.logOut li a.current {background:#fff;} 	
+		   
+ul.logOut li:first-child a, ul.logOut li.admin a, ul.logOut li:first-child a.current, ul.logOut li.admin a.current {font-size:.6em;line-height:1em;position:relative; bottom:-1px;}
+		   
+		  
+/* top nav and action item link styles */
+#menu ul.topNav li a, ul.actionItems li a {display:block;position:relative;height:22px;padding:2px 24px;font-size:12px;line-height:22px;text-align:center;text-decoration:none;font-weight:bold;background:#a62915;border:1px solid #c00;border-bottom: 2px solid #300; border-right: 2px solid #300; color:#dfd5b9;}
+ul.actionItems li a {background:#efefef;border:1px solid #ccc;border-bottom: 2px solid #ccc; border-right: 2px solid #ccc; color:#a62915;width:150px;}			
+					  
+/* top nav and action item link hover styles */
+#menu ul.topNav li a:hover, #menu ul.topNav li a.current, ul.actionItems li a:hover, ul.actionItems li a.current:hover {background:#fff;border:1px solid #ccc;border-bottom: 2px solid #ccc; border-right: 2px solid #ccc; color:#a62915;} 				
+ul.actionItems li a.current, ul.actionItems li a:hover	{background:#fff;}
+
+/* content area and footer divs */
+#changingContent {float:left;display:inline;width:868px;margin-top:10px;padding: 30px 40px 60px 40px;background:#fff;border:1px solid #dfd5b9;}
+#footer {float:left;display:inline;width:900px;margin:0 0 50px 15px;padding:10px;font-size:.9em;color:#fff;text-align:center;}
+#footer li {color:#dfd5b9;}
+#footer li a {margin:0px 5px;color:#efefef;text-decoration:none;}
+#footer li a:hover {color:#fff;}
+
+#footer .copyright {float:right; display:inline;color:#efefef;margin-right:5px;font-size:.8em;}
+
+	
+/******************************************************************************************************************/
+/*************************** CHANGING CONTENT SECTIONS / PER PAGE SECTIONS ****************************************/
+/******************************************************************************************************************/		
+	
+/* Home Columns ******************/		
+	
+/* left column */
+.homeLeft {float:left;display:inline;width:580px;margin:0;}
+.homeLeft ul {float:left;display:inline;width:580px;clear:left;}
+.homeLeft ul li {float:left;display:inline;width:560px;margin-bottom:15px;padding:0 10px;padding-bottom:20px;background:#efefef;border:1px dotted #d8edf7;}
+	
+/* right column */
+.homeRight {float:right;display:inline;width:270px;margin-left:20px;margin:0;}
+.homeRight ul {float:left;display:inline;width:270px;clear:left;}
+.homeRight ul li {float:left;display:inline;width:250px;padding:0 10px;padding-bottom:20px;background:#efefef;border:1px dotted #d8edf7;}
+	
+/* the hover li */
+.hover:hover li {background:#d8edf7;}	
+	
+	
+/* Book Examples Listing ******************/		
+.bookExamples {float:left;display:inline;width:860px;margin:20px 0 0 0;}	
+.bookExamples .book {float:left;display:inline;width:205px;margin:0 10px 10px 0;}
+.bookExamples .book img {width:203px;height:210px;} 
+.bookExamples .book a {display:block;text-decoration:none;text-align:center;background:#ede8d2;border:1px solid #efefef;border-right:2px solid #ccc;border-bottom:2px solid #ccc;line-height:30px;}
+.bookExamples .book a:hover {background:#dfd5b9;}	
+			
+	
+/* Book Example Detail******************/		
+.bookExampleDetail {float:left;display:inline;width:860px;margin:20px 0 0 0;}	
+.bookExampleDetail .book {float:left;display:inline;width:860px;margin:10px 0 0 0px;}	
+.bookExampleDetail .book img {float:left;display:inline;width:290px;height:320px;margin-right:20px;}
+.bookExampleDetail .book .bookDescription {float:left;display:inline;width:330px;}		
+		
+/* TEMPORARY call to actions */
+.callToAction {float:right;display:inline;width:200px;}
+.callToAction a {display:block;width:190px;height:150px;text-align:center;background:#efefef;margin:0 0 10px 10px;/* this is temporary as this should be graphics */color:#ccc;font-size:10px;line-height:150px;text-transform:uppercase;text-decoration:none;}	
+	
+	
+/* Pagination */
+.pagination {float:left;display:inline;width:870px;margin:0;text-align:center;}
+.top {margin-bottom:15px;}
+.bottom {margin-top:15px;}
+	
+/* Pagination href */
+.pagination a, .pagination a:focus, .pagination a:visited {margin: 0 2px;padding:3px 5px;line-height:25px;background:#d8edf7;border-right:1px solid #ccc;border-bottom:1px solid #ccc;text-decoration:none;}	 
+.pagination a:hover, .pagination a.current {background:#a62915;color:#fff;text-decoration:none;} 
+		
+	
+/* press article formatting ******************/		
+.dateline {margin-bottom:10px;}	
+	
+	
+/* account page ordered list, creates your profile links******************/		
+ul.account {float:left;display:inline;width:200px;margin:10px 0;}
+ul.account li {width:195px;margin-bottom:5px;}
+	
+ul.options li {color:#453128;background:#efefef;border:1px solid #ccc;border-bottom: 2px solid #ccc; border-right: 2px solid #ccc; font-weight:bold;}
+ul.options li label {display:inline-block;padding:3px 5px 3px 3px;}
+			
+/*ul.account li a {display:block;width:165px;padding:3px 15px;color:#453128;background:#ede8d2;border:1px solid #dfd5b9;border-bottom: 2px solid #dfd5b9; border-right: 2px solid #dfd5b9; font-weight:bold;}*/
+ul.account li a {display:block;width:165px;padding:3px 15px;color:#453128;background:#efefef;border:1px solid #ccc;border-bottom: 2px solid #ccc; border-right: 2px solid #ccc; font-weight:bold;}
+ul.account li a:hover {display:block;width:165px;padding:3px 15px;color:#453128;background-color:#a62915;border:1px solid #c00;border-bottom: 2px solid #300;border-right: 2px solid #300;color:#fff;cursor:pointer;text-decoration:none;}			
+ul.account li:hover {background:#f5f5f5 !important;}			
+	
+	
+/* account page tables */
+.contributorsTable, .booksTable {float:left;display:inline;width:868px;}
+	
+	
+/* medium width table for login, etc */
+.medium {width:630px;}
+	
+/* account 'your profile' narrow column */
+.sideBar {float:left;display:inline;width:200px} /* Should this be float:right ??? */
+.sideBar h2 {margin-top:40px;}	
+	
+/* contributors options, three col layout on manage book page */
+.contributorsOptions {float:left;display:inline;width:870px;margin: 0 0 40px 0;}
+.contributorsOptions li {float:left;display:inline;width:290px;padding:0 15px 0 0;}
+.contributorsOptions li:first-child {margin-left:0;padding-left:0;}
+		
+		
+/* red stand alone big sidebar links */
+.contributorsOptions li.bookOptions {width:255px;padding-right:0;}
+.bookOptions input {margin-top:2px;width:245px;height:50px;padding:2px 10px;background-color:#a62915;border:1px solid #c00;border-bottom: 2px solid #300;border-right: 2px solid #300;color:#fff;font-weight:bold;text-align:center;}
+.bookOptions input.pages {width:270px;background-color:#666;border:1px solid #ccc;border-bottom: 2px solid #333;border-right: 2px solid #333;height:30px;text-align:left;}
+/*.contributorsOptions li.threeCol {float:left;display:inline;width:630px;margin-left:0;padding-left:0;}*/	
+		
+	
+/* round button/link styles */
+.sideBar .submit input, .contributorsOptions a  {padding:2px 5px;line-height:22px;color:#453128;background:#ede8d2;border:1px solid #dfd5b9;border-bottom: 2px solid #dfd5b9; border-right: 2px solid #dfd5b9; font-weight:bold;}
+	
+		
+/* contributors options copy links */
+.contributorsOptions a {margin:0;}
+		
+/* common hover styles */
+.submit input:hover, .contributorsOptions a:hover, .bookOptions input:hover {background-color:#a62915;border:1px solid #c00;border-bottom: 2px solid #300;border-right: 2px solid #300;color:#fff;cursor:pointer;text-decoration:none;}
+.bookOptions input:hover {background:#900;}
+		
+				
+/******************************************************************************************************************/
+/***************************************** INPUT/OUTPUT TABLES *******************************************/
+/******************************************************************************************************************/
+ 
+/* Global Tables */	
+table.edit {float:left;display:inline;width:870px;margin-top:15px;background-color:#fff;border:2px solid #dbd8d3;} 
+table.edit th  {background:#666;width:870px;color:#fff;}
+table.edit th, table.edit td {padding:6px 7px;font-size:12px;}
+table.edit td {background:#fdfdfd;}
+		
+table.edit td.center {text-align:center;}
+		
+/* sort row style and link definitions */
+table.edit th label, table.edit th a, table.edit th a:visited, table.edit th a:focus {color:#fff;text-decoration:none;font-weight:bold;font-size:.9em;}
+table.edit th a:hover {color:#efefef;text-decoration:none;font-weight:bold;}			
+table.edit th img {float:left;display:inline;margin:2px 4px 0 0;} 				
+	
+/* alternating row colors */		
+table.edit tr.alternate td {background:#f5f5f5;}
+	
+/* tr with color and any buttons functionality */
+table.edit td.tableHeadColor {width:870px;padding:6px 15px;background: #ede8d2;color:#453128;font-weight:bold;}
+	
+/* tr with radio selectors and 'add' buttons */	
+table.edit td.tableHeadColor .addEntry {float:right;display:inline;width:834px;text-align:right;}
+table.edit td.tableHeadColor .addEntry a {position:relative;margin-left:5px;padding:2px 15px;background:#a62915;border:1px solid #c00;border-bottom: 2px solid #300;border-right: 2px solid #300;color:#fff;font-weight:bold;text-decoration:none;}
+table.edit td.tableHeadColor .addEntry a:hover {background-color:#900;}
+	
+	
+table.edit td.label {width:286px !important;text-align:right;}
+table.edit td.label label, table.edit td.label  {color:#666;font-size:12px !important;font-weight:bold;}
+table.edit td.field {width:570px !important;background-color:#f5f5f5;}	
+table.edit td.twoCol {width:856px !important;}
+			
+/* styles for 'field' elements */	
+table.edit td.field input.text, table.edit td.field textarea.text, table.edit td.field textarea {width:500px;}	
+table.edit td.field textarea.text {height:150px;}
+input.smallText {width:220px !important;margin-right:5px;}
+table.edit td.field input.fileUpload {width:200px;margin-right:5px;}
+table.edit td.field ul {margin:0 0 20px 10px;}
+table.edit td.field li {margin-bottom:4px;}	
+		
+/* submit row styles + approve table has a different background color */
+table.edit td.submit {padding:5px  15px;background: #efefef url(../images/bg_bars.gif) repeat-x;text-align:right;color:#453128;}
+.submit input {margin-right:5px;padding:2px 5px;overflow:visible;background:#a62915;border:1px solid #c00;border-bottom: 2px solid #300;border-right: 2px solid #300;color:#fff;font-weight:bold;}
+.submit input:hover {background:#666;border:1px solid #000;border-bottom: 2px solid #000; border-right: 2px solid #000; color:#fff;cursor:pointer;}
+				
+.submit input.skipSteps {margin-right:0 !important;background:#333;border:1px solid #666;border-bottom: 2px solid #666; border-right: 2px solid #666; color:#fff;cursor:pointer;}
+		
+/* used on login and account sign up */
+table.small, table.small td.tableHeadColor {width:415px;}	
+table.small td.label {width:195px;}
+table.small td.field {width:310px;}			
+			
+td.label p.note {width:300px;}
+			
+/* used on login and account sign up */
+table.medium, table.medium td.tableHeadColor  {width:630px}	
+table.medium td.label {width:150px;}
+table.medium td.field {width:450px;}	
+table.medium td.tableHeadColor .addEntry {width:250px;}	
+		
+/* pages with two forms use a column divider */
+.divider, .nodivider {float:left;display:inline;margin:20px 16px 0 16px;min-height:130px;border-left:1px solid #efefef;}
+.horizontalDivider {width:210px;margin:10px 0;border-top:1px solid #efefef;}
+.field .divider {border-color:#ccc;}
+.nodivider {border:0;}
+		
+/* misc */
+table.right {float:right;}		
+td.confirmation {background:#d8edf7 !important;}
+#view {cursor:pointer;}
+		
+/* required markers */	
+td.requiredKey {background:#efefef url(../images/inactiveStripe.gif) repeat !important;text-align:center;padding:2px !important;color:#000;font-weight:bold;font-size:.85em;}
+td.requiredKey span, span.required {color: #c00;}
+		
+
+	
+
+/******************************************************************************************************************/
+/******************************************** * ROUNDED CORNERS * ************************************************/
+/******************************************************************************************************************/
+
+#changingContent, #menu, #header {-moz-border-radius: 10px;-webkit-border-radius: 10px;}
+
+#menu ul.topNav li, #menu ul.topNav li a, .addEntry a,  ul.actionItems li a, a.back, a.more, a.right, h2, .pagination a, .curFocus, ul.account li, ul.account li a, table.edit td.submit input, div.submit input, table.edit td.submit input:hover, div.submit input:hover, .contributorsOptions a, a.round, .bookOptions input, .homeRight ul li, .homeLeft ul li{-moz-border-radius: 5px;-webkit-border-radius: 5px;}
+
+ul.actionItems li a,  ul.logOut li a {-moz-border-radius-topleft: 5px;-moz-border-radius-topright: 5px;-webkit-border-top-left-radius: 5px;-webkit-border-top-right-radius: 5px;}
+ 
+.bookExamples .book a {-moz-border-radius-bottomleft: 5px;-moz-border-radius-bottomright: 5px;-webkit-border-bottom-left-radius: 5px;-webkit-border-bottom-right-radius: 5px;}

@@ -1,14 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Twoo</title>
+	<title>Sitemap HTML Templates: The Wisdom of Others</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+ <div id="wrapper"><!---wraps entirety, defines width and margins for site--->
 
-<%= yield %>
+    <!---mast graphic, link--->
+    <ul class="logOut">            	
+          <li class="admin"><a href="manage/">Admin [temporary]</a></li>	
+          <li><a href="account.html" class="current">Your Account</a></li>
+          <li><a href="login.html">Log In/Log Out</a></li>
+    </ul>     
+    
+    <div id="header">
+      <div class="title">
+        <a href="index.html" title="home">The Wisdom of Others</a>
+      </div>
+      <ul class="actionItems">
+          <li></li>
+      </ul>   
+    </div>
+    <!--END header-->
 
+    <!---start navigation--->
+    <div id="menu">            
+            <ul class="topNav">
+                <li><a href="index.html">Home</a></li>  
+                <li><a href="bookExamples.html">Book Examples</a></li> 
+                <li><a href="howItWorks.html">How It Works</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="pricingAndShipping.html">Pricing &amp; Shipping</a></li>                
+                <li><a href="ourStory.html">Our Story</a></li>
+                <li><a href="ourGiving.html">Our Giving</a></li>
+            </ul>        
+    </div>
+    <!---end navigation--->	
+
+  <div id="changingContent">		
+    <%= yield %>
+  </div>
+
+  <!---start footer--->
+  <div id="footer">
+    <ul class="footerLinks">
+            	<li><a href="contactUs.html">contact us</a></li>
+                <li> | </li>
+            	<li><a href="privacyPolicy.html">privacy policy</a></li>
+                <li> | </li>
+            	<li><a href="terms.html">terms of use</a></li>
+                <li> | </li>
+            	<li><a href="OurGuarantee.html">our guarantee</a></li>
+    </ul>
+    <span class="copyright">&copy 2011 The Wisdom of Others</span>
+  <!--END footer-->
+
+ </div>
+ <!-- END wrapper->
 </body>
 </html>
