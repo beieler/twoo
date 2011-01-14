@@ -22,5 +22,18 @@ Twoo::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+
+#Some setup you must do manually if you haven't yet:
+#
+#  1. Setup default url options for your specific environment. Here is an
+#     example of development environment:
+#
+#       config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+#
+#     This is a required Rails configuration. In production it must be the
+#     actual host of your application
+# That is what devise:install told me, so I am adding this line here for now:
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
 end
 
