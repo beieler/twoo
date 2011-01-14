@@ -1,18 +1,80 @@
-<h2>Sign up</h2>
-
+            <h1>Create An Account</h1> 
+            
+            <p>Suspendisse nunc urna, sodales non vestibulum et, consectetur non arcu. Suspendisse lectus sem, lobortis at elementum et, euismod eget lectus. Etiam tortor ante, hendrerit sit amet eleifend ut, imperdiet consequat nunc. Vestibulum lectus ligula, suscipit eu lacinia et, semper vitae massa. Duis tempor laoreet lacus eu scelerisque. </p>           
+            
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
+      <table cellspacing="1" cellpadding="0" border="0" class="edit small">
+        <tr>
+          <td colspan="2" class="tableHeadColor">
+            New Account Sign Up
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="requiredKey">
+            <span class="required">* </span>
+            Required
+          </td>
+        </tr>
 
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
-
-  <p><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></p>
-
-  <p><%= f.submit "Sign up" %></p>
+        <tr>
+          <td class="label">
+            <label for="name">
+                 <span class="required">* </span>
+                 Name:
+            </label>
+          </td>
+          <td class="field">
+            <input name="name" type="" id="name" maxlength="200" value="" class="smallText" />
+          </td>
+        </tr>
+       	<tr>
+          <td class="label">
+            <span class="required">* </span>
+<%= f.label :email, 'Email Address:' %>
+          </td>
+          <td class="field">
+<%= f.email_field :email, :maxlength=>"200", :class=>"smallText" %>
+          </td>
+        </tr>
+        <tr>
+          <td class="label">
+            <span class="required">* </span>
+<%= f.label :password, 'Password:' %>
+          </td>
+          <td class="field">
+<%= f.password_field :password, :maxlength=>"200", :class=>"smallText" %>
+          </td>
+        </tr>
+        <tr>
+          <td class="label">
+            <span class="required">* </span>
+<%= f.label :password_confirmation, 'Verify Password:' %>
+          </td>
+          <td class="field">
+<%= f.password_field :password_confirmation, :maxlength=>"200", :class=>"smallText" %>
+          </td>
+        </tr>
+        <tr>
+          <td class="field" colspan="2">
+<%= f.label :terms, 'I agree to the Terms and Conditions ...' %>
+<!--%= f.check_box :terms %-->
+          </td>
+        </tr>
+        <tr>
+          <td class="submit" colspan="2">
+            <%= f.submit "Submit" %>
+          </td>
+        </tr>  
 <% end %>
+      </table>
+            
+      <div style="float:left;display:inline;width:400px;margin-left:25px;">
+            <h2>Lorem ipsum dolor sit amet</h2>
+            <p>Cconsectetur adipiscing elit. Fusce id tristique urna. Maecenas scelerisque tortor sit amet ante mattis ullamcorper. Aliquam sollicitudin nunc et velit sollicitudin congue. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis ut massa lectus, vel blandit urna. Aliquam ac nulla dui. Fusce sed leo erat, nec ultricies justo. Proin lobortis, sem dictum mattis suscipit, nunc risus elementum justo, vitae sagittis lorem ante ut odio. Donec dictum fermentum metus, at dignissim justo dictum vitae. Quisque at libero erat, nec cursus quam. Donec libero neque, scelerisque et ornare vel, elementum sit amet nibh. Donec tristique mauris ac eros lobortis semper. Vivamus venenatis vehicula odio a faucibus. Morbi eget hendrerit mi. Curabitur sapien dolor, suscipit vel lacinia id, porttitor eget libero. Etiam tincidunt, dui congue porttitor rhoncus, justo nunc posuere risus, viverra pharetra dolor diam vel sem. Sed et mi tellus. Nullam nec elementum nisl. Aliquam interdum congue metus lobortis consectetur. </p>
+            
+      </div>
+
 
 <%= render :partial => "devise/shared/links" %>
