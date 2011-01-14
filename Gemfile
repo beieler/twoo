@@ -1,5 +1,6 @@
 source :rubygems #'http://rubygems.org'
 
+gem 'rake'
 gem 'rails', '3.0.3'
 
 # Bundle edge Rails instead:
@@ -27,5 +28,5 @@ gem 'faker'
 # and rake tasks are available in development mode:
 group :development, :test do
   gem 'webrat'
-  gem 'ruby-debug19'
+  #gem 'ruby-debug19'
 end
