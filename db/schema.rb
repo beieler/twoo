@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20110114213711) do
   create_table "accounts", :force => true do |t|
     t.string   "name"
     t.boolean  "terms"
-    t.integer  "user_id_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

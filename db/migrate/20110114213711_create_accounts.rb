@@ -3,7 +3,7 @@ class CreateAccounts < ActiveRecord::Migration
     create_table :accounts do |t|
       t.string :name
       t.boolean :terms
-      t.references :user_id
+      t.references :user
 
       t.timestamps
     end

@@ -1,4 +1,6 @@
 class AccountsController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /accounts
   # GET /accounts.xml
   def index
@@ -40,7 +42,13 @@ class AccountsController < ApplicationController
   # POST /accounts
   # POST /accounts.xml
   def create
-    @account = Account.new(params[:account])
+    logger.error(current_user)
+    logger.error(current_user.id)
+    logger.error(current_user.inspect)
+    logger.error(params[:account].inspect)
+    #@account = Account.new(params[:account].merge(:user_id=>current_user.id))
+    @account = current_user.build_account(params[:account])
+    logger.error(@account)
 
     respond_to do |format|
       if @account.save
