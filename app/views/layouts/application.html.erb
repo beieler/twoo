@@ -47,13 +47,13 @@
     <!---start navigation--->
     <div id="menu">            
             <ul class="topNav">
-                <li><a href="index.html">Home</a></li>  
-                <li><a href="bookExamples.html">Book Examples</a></li> 
-                <li><a href="howItWorks.html">How It Works</a></li>
-                <li><a href="faqs.html">FAQs</a></li>
-                <li><a href="pricingAndShipping.html">Pricing &amp; Shipping</a></li>                
-                <li><a href="ourStory.html">Our Story</a></li>
-                <li><a href="ourGiving.html">Our Giving</a></li>
+              <li><%= link_to 'Home', home_index_path %></li>  
+              <li><%= link_to 'Book Examples', home_bookExamples_path %></li> 
+              <li><%= link_to 'How It Works', home_howItWorks_path %></li>
+              <li><%= link_to 'FAQs', home_faqs_path %></li>
+              <li><%= link_to 'Pricing &amp; Shipping', home_pricingAndShipping_path %></li>                
+              <li><%= link_to 'Our Story', home_ourStory_path %></li>
+              <li><%= link_to 'Our Giving', home_ourGiving_path %></li>
             </ul>        
     </div>
     <!---end navigation--->	
@@ -65,13 +65,13 @@
   <!---start footer--->
   <div id="footer">
     <ul class="footerLinks">
-            	<li><a href="contactUs.html">contact us</a></li>
+            	<li><%= link_to 'contact us', home_contactUs_path %></li>
                 <li> | </li>
-            	<li><a href="privacyPolicy.html">privacy policy</a></li>
+            	<li><%= link_to 'privacy policy', home_privacyPolicy_path %></li>
                 <li> | </li>
-            	<li><a href="terms.html">terms of use</a></li>
+            	<li><%= link_to 'terms of use', home_terms_path %></li>
                 <li> | </li>
-            	<li><a href="ourGuarantee.html">our guarantee</a></li>
+            	<li><%= link_to 'our guarantee', home_ourGuarantee_path %></li>
     </ul>
     <span class="copyright">&copy 2011 The Wisdom of Others</span>
   <!--END footer-->
