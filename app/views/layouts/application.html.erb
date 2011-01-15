@@ -23,15 +23,14 @@
 
     <!---mast graphic, link--->
     <ul class="logOut">            	
-          <li class="admin"><a href="manage/">Admin [temporary]</a></li>	
-          <li><a href="/accounts/show" class="current">Your Account</a></li>
-          <li>
+      <li class="admin"><%= link_to('Admin [temporary]', 'manage/') %></li>
 <% if user_signed_in? %>
-  <%= link_to('Log Out', destroy_user_session_path) %>        
+      <li><%= link_to('Your Account', current_user.account, :class=>"current") %></li>
+      <li><%= link_to('Sign Out', destroy_user_session_path) %></li>
 <% else %>
-  <%= link_to('Log In', new_user_session_path)  %>  
+      <li><%= link_to('Register', new_user_registration_path) %></li>
+      <li><%= link_to('Sign In', new_user_session_path) %></lib>
 <% end %>
-          </li>
     </ul>     
     
     <div id="header">

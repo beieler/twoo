@@ -1,17 +1,48 @@
-<h2>Sign in</h2>
+<h1>Sign in</h1>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
-
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
+    <table cellspacing="1" cellpadding="0" border="0" class="edit small">
+      <tr>
+        <td colspan="2" class="tableHeadColor">
+          Log In to Your Account
+        </td>
+      </tr>
+      <tr>
+        <td class="label">
+  <%= f.label :email, 'Email:' %>
+        </td>
+        <td class="field">
+          <%= f.text_field :email, :tabindex=>1, :maxlength=>200, :size=>0, :class=>"smallTest" %>
+          <a href="#" class="note">forgot user name?</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="label">
+  <%= f.label :password, 'Password:' %>
+        </td>
+        <td class="field">
+          <%= f.password_field :password, :tabindex=>2, :maxlength=>200, :size=>0, :class=>"smallTest" %>
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+  <%= link_to "forgot your password?", new_password_path(resource_name), :class=>"note" %>
+<% end -%> 
+        </td>
+      </tr>
 
   <% if devise_mapping.rememberable? -%>
-    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
+    <tr>
+      <td>
+    <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+      </td>
+    </tr>
   <% end -%>
 
-  <p><%= f.submit "Sign in" %></p>
+      <tr>
+        <td class="submit" colspan="2">
+  <%= f.submit "Submit", :tabindex=>3 %>
+        </td>
+      </tr>
+
+  </table>
 <% end %>
 
-<%= render :partial => "devise/shared/links" %>
+<!--div class="divider">&nbsp;</div-->
