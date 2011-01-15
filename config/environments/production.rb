@@ -46,4 +46,10 @@ Twoo::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+#     This is a required Rails configuration. In production it must be the
+#     actual host of your application
+# That is what devise:install told me, so I am adding this line here for now:
+  config.action_mailer.default_url_options = { :host => 'strong-day-474.heroku.com' }
+
 end
