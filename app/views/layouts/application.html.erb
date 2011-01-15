@@ -23,7 +23,7 @@
 
     <!---mast graphic, link--->
     <ul class="logOut">            	
-      <li class="admin"><%= link_to('Admin [temporary]', 'manage/') %></li>
+      <li class="admin"><%= link_to('Admin [temporary]', accounts_path) %></li>
 <% if user_signed_in? %>
       <li><%= link_to('Your Account', current_user.account, :class=>"current") %></li>
       <li><%= link_to('Sign Out', destroy_user_session_path) %></li>
