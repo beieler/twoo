@@ -78,7 +78,13 @@ a.right {float:right;}
 
 /* header graphic, link */
 #header {float:left;display:inline;width:948px;margin-bottom:10px;border:1px solid #dfd5b9;background:#fff;}
-#header .title a {float:left;display:inline;width:370px;height:130px;padding:5px 10px;padding-left:30px;color:#453128;font-size:32px;line-height:130px;text-decoration:none;}
+#header .title a {
+  float:left;display:inline;width:370px;
+  padding:5px 10px;padding-left:30px;color:#453128;font-size:32px;
+  text-decoration:none;
+  //height:130px; line-height:130px;
+  line-height:90px;
+}
 	
 
 /* log in / log out and your account */
@@ -88,11 +94,22 @@ ul.logOut li.admin {margin-right:30px;}
 /* header action links */
 ul.actionItems {float:right;display:inline;width:240px;margin-top:45px;margin-right:20px;}	
 	
-	
+
 /* menu / navigation */
-#menu {float:right;display:inline;width:950px;padding:7px 0;/*background: #efefef url(../images/bg_bars.gif) repeat-x;*/ background:transparent;}
-#menu ul.topNav {width:900px;margin-left:50px;}		
-		
+#menu {
+  float:right;
+  display:block;
+  width:950px;padding:7px 0;
+  /*background: #efefef url(../images/bg_bars.gif) repeat-x;*/
+  background:transparent;
+}
+#menu ul.topNav {
+  display:block;
+  width:900px;
+  margin-left:50px;
+}
+
+
 /* logOut and footer li formatting styles */
 ul.logOut li, #menu ul.topNav li, ul.actionItems li, #menu ul.topNav li, #footer ul li {float:left;display:inline;position:relative;margin-left:3px;margin-bottom:-1px;}			
 			

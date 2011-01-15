@@ -21,25 +21,25 @@
 
  <div id="wrapper"><!---wraps entirety, defines width and margins for site--->
 
-    <!---mast graphic, link--->
+    <!---header: links, mast graphic--->
     <ul class="logOut">            	
       <li class="admin"><%= link_to('Admin [temporary]', accounts_path) %></li>
 <% if user_signed_in? %>
-      <li><%= link_to('Your Account', current_user.account, :class=>"current") %></li>
+      <li><%= link_to('Your Account', current_user.account) %></li>
       <li><%= link_to('Sign Out', destroy_user_session_path) %></li>
 <% else %>
-      <li><%= link_to('Register', new_user_registration_path) %></li>
+      <li><%= link_to('Register', new_user_registration_path, :class=>"current") %></li>
       <li><%= link_to('Sign In', new_user_session_path) %></lib>
 <% end %>
     </ul>     
     
     <div id="header">
       <div class="title">
-        <%= link_to 'The Wisdom of Others', home_index_path, :title=>"home" %>
+        <%= link_to 'The Wisdom of Others', new_user_registration_path, :title=>"home" %>
       </div>
-      <ul class="actionItems">
+      <!--ul class="actionItems">
           <li></li>
-      </ul>   
+      </ul-->   
     </div>
     <!--END header-->
 
@@ -47,19 +47,25 @@
     <div id="menu">            
             <ul class="topNav">
               <li><%= link_to 'Home', home_index_path %></li>  
-              <li><%= link_to 'Book Examples', home_bookExamples_path %></li> 
+              <li><%= link_to 'Book', home_bookExamples_path %></li> 
               <li><%= link_to 'How It Works', home_howItWorks_path %></li>
               <li><%= link_to 'FAQs', home_faqs_path %></li>
-              <li><%= link_to 'Pricing &amp; Shipping', home_pricingAndShipping_path %></li>                
+              <li><%= link_to 'Pricing & Shipping', home_pricingAndShipping_path %></li>                
               <li><%= link_to 'Our Story', home_ourStory_path %></li>
               <li><%= link_to 'Our Giving', home_ourGiving_path %></li>
             </ul>        
     </div>
     <!---end navigation--->	
 
+  <!---start changing content--->	
   <div id="changingContent">		
-    <%= yield %>
+
+
+ <%= yield %>
+
+
   </div>
+  <!---end changing content--->	
 
   <!---start footer--->
   <div id="footer">
