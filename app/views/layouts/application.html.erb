@@ -24,7 +24,7 @@
     <!---mast graphic, link--->
     <ul class="logOut">            	
           <li class="admin"><a href="manage/">Admin [temporary]</a></li>	
-          <li><a href="account.html" class="current">Your Account</a></li>
+          <li><a href="/accounts/show" class="current">Your Account</a></li>
           <li>
 <% if user_signed_in? %>
   <%= link_to('Log Out', destroy_user_session_path) %>        
@@ -36,7 +36,7 @@
     
     <div id="header">
       <div class="title">
-        <a href="index.html" title="home">The Wisdom of Others</a>
+        <%= link_to 'The Wisdom of Others', home_index_path, :title=>"home" %>
       </div>
       <ul class="actionItems">
           <li></li>
