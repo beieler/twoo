@@ -1,10 +1,11 @@
 Twoo::Application.routes.draw do
   resources :books
-
   resources :subjects
   resources :themes
   resources :accounts
+
   namespace :admin do
+    resources :books
     resources :subjects
     resources :themes
   end
