@@ -1,4 +1,6 @@
 Twoo::Application.routes.draw do
+  resources :themes
+
   resources :accounts
 
   devise_for :users, :controllers => { :registrations => "users/registrations" }
