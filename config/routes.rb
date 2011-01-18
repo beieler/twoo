@@ -1,4 +1,6 @@
 Twoo::Application.routes.draw do
+  resources :books
+
   resources :subjects
   resources :themes
   resources :accounts

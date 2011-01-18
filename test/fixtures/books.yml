@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user: 
+  subject: 
+  theme: 
+  title: MyString
+  occasion: MyString
+  question: MyText
+  extra: MyText
+  preface: MyText
+  dedication: MyText
+  epilogue: MyText
+
+two:
+  user: 
+  subject: 
+  theme: 
+  title: MyString
+  occasion: MyString
+  question: MyText
+  extra: MyText
+  preface: MyText
+  dedication: MyText
+  epilogue: MyText

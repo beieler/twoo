@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @book.user %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%= @book.subject %>
+</p>
+
+<p>
+  <b>Theme:</b>
+  <%= @book.theme %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @book.title %>
+</p>
+
+<p>
+  <b>Occasion:</b>
+  <%= @book.occasion %>
+</p>
+
+<p>
+  <b>Question:</b>
+  <%= @book.question %>
+</p>
+
+<p>
+  <b>Extra:</b>
+  <%= @book.extra %>
+</p>
+
+<p>
+  <b>Preface:</b>
+  <%= @book.preface %>
+</p>
+
+<p>
+  <b>Dedication:</b>
+  <%= @book.dedication %>
+</p>
+
+<p>
+  <b>Epilogue:</b>
+  <%= @book.epilogue %>
+</p>
+
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
