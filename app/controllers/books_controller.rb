@@ -81,3 +81,4 @@ class BooksController < ApplicationController
     end
   end
 end
+# Copyright (c) 2010 Christopher Dunn.

@@ -51,3 +51,5 @@ Twoo::Application.routes.draw do
   # For devise sign_out.
   root :to => "home#index" # no effect until we del public/index.html
 end
+
+# Copyright (c) 2010 Christopher Dunn.

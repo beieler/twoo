@@ -89,3 +89,4 @@ class AccountsController < ApplicationController
     end
   end
 end
+# Copyright (c) 2010 Christopher Dunn.

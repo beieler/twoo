@@ -8,3 +8,4 @@ class ApplicationController < ActionController::Base
     home_index_path
   end
 end
+# Copyright (c) 2010 Christopher Dunn.
