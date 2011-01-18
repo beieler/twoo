@@ -1,9 +1,9 @@
 Twoo::Application.routes.draw do
   resources :subjects
-
   resources :themes
   resources :accounts
   namespace :admin do
+    resources :subjects
     resources :themes
   end
 
