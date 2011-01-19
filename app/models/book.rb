@@ -1,5 +1,6 @@
 class Book < ActiveRecord::Base
   belongs_to :user
-  belongs_to :subject
-  belongs_to :theme
+  has_one :subject
+  has_one :theme
+  attr :subject_name
 end

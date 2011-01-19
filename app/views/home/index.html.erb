@@ -23,7 +23,7 @@
                         <h2>Create a Book</h2>
                         <p><img src="/images/placeholder.gif" width="250" height="150" class="left" />
                           <%= Faker::Lorem.paragraph %>
-                        </p> <a href="createBook_login.html" class="more">Read More &raquo;</a>
+                          </p> <%= link_to raw('Read More &raquo;'), new_book_path, :class=>'more' %>
                     </li>                
                 </ul>
                 <ul class="hover">

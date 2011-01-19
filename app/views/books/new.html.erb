@@ -28,10 +28,10 @@
           <tr>
             <td class="label">
               <span class="required">* </span>
-              <%= f.label :subject, "Who is your book for?:" %>
+              <%= f.label :subject_name, "Who is your book for?:" %>
             </td>
             <td class="field">
-              <%= f.text_field :subject, :maxlength=>'200', :class=>'text' %>
+              <%= f.text_field :subject_name, :maxlength=>'200', :class=>'text' %>
             </td>
           </tr>
           <tr>
@@ -123,71 +123,38 @@
             <td class="field">
               <%= f.check_box :preface_include %>
               <%= f.label :preface_include, 'Preface' %>
+              &nbsp;&nbsp;&nbsp;<a href="">View Samples &raquo; </a>
+              <br />
               <%= f.text_area :preface, :rows=>'6', :class=>'text' %>
-              <br></br>
-              <br></br>
+              <br />
+              <br />
+
               <%= f.check_box :dedication_include %>
               <%= f.label :dedication_include, 'Dedication' %>
+              &nbsp;&nbsp;&nbsp;<a href="">View Samples &raquo; </a>
+              <br />
               <%= f.text_area :dedication, :rows=>'6', :class=>'text' %>
-              <br></br>
-              <br></br>
+              <br />
+              <br />
+
               <%= f.check_box :epilogue_include %>
               <%= f.label :epilogue_include, 'Epilogue (Afterword)' %>
+              &nbsp;&nbsp;&nbsp;<a href="">View Samples &raquo; </a>
+              <br />
               <%= f.text_area :epilogue, :rows=>'6', :class=>'text' %>
-              <br></br>
-              <br></br>
+              <br />
+              <br />
+
               <%= f.check_box :contributors_list_include %>
               <%= f.label :contributors_list_include, 'List of Contributors' %>
               <p class="note">* Contributors list page will be automatically generated.</p>
             </td>
           </tr>
           <tr>
-            <td class="label">
-              <span class="required">* </span>
-              <%= f.label :subject, "Who is your book for?:" %>
-            </td>
-            <td class="field">
-              <%= f.text_field :subject, :maxlength=>'200', :class=>'text' %>
-            </td>
-          </tr>
-          <tr>
-            <td class="label">
-              <span class="required">* </span>
-              <%= f.label :occasion, "What is the occasion?:" %>
-            </td>
-            <td class="field">
-                <%= f.select(:occasion, [
-                  ['--- Select One ---', 'blank'],
-                  ['Anniversary', 'Anniversary'],
-                  ['Graduation', 'Graduation'],
-                  ['Wedding', 'Wedding'],
-                  ['New Baby', 'New Baby'],
-                  ['Other', 'Other']], {}, {}) %>
-            </td>
-          </tr>
-          <tr>
-            <td class="label">
-              <span class="required">* </span>
-              <%= f.label :question, "What question would you like ask?:" %>
-            </td>
-            <td class="field">
-              <%= f.text_field :question, :maxlength=>'200', :class=>'text' %>
-            </td>
-          </tr>
-          <tr>
-            <td class="label">
-              <span class="required">* </span>
-              <%= f.label :extra, "In addition to each contributors name, is there anything else you want to know about them?:" %>
-            </td>
-            <td class="field">
-              <%= f.text_field :extra, :maxlength=>'200', :class=>'text' %>
-            </td>
-          </tr>
-          <tr>
             <td class="submit" colspan="2">
               <p class="note" style="float:left;display:inline;margin:0;">* You will be able to edit these settings at any time from your book management page.</p>
               <%= button_to_function raw('&laquo; Back'), "$('createBook3').hide(); $('createBook2').show();" %>
-              <%= f.submit raw("Done") %>
+              <%= f.submit raw("Create Book &raquo;") %>
             </td>
           </tr>
         </table>

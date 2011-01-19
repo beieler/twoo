@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110119070049) do
+ActiveRecord::Schema.define(:version => 20110119074148) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(:version => 20110119070049) do
   end
 
   create_table "books", :force => true do |t|
-    t.integer  "user_id"
     t.integer  "subject_id"
     t.integer  "theme_id"
     t.string   "title"
@@ -37,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20110119070049) do
     t.boolean  "dedication_include",        :default => true
     t.boolean  "epilogue_include",          :default => true
     t.boolean  "contributors_list_include", :default => true
+    t.integer  "account_id"
   end
 
   create_table "subjects", :force => true do |t|
