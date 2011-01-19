@@ -14,7 +14,14 @@
 
       <div id="createBook1" style="display: inline;">
         <table cellspacing="1" cellpadding="0" border="0" class="edit">
-          <tr><td colspan="2" class="tableHeadColor">&nbsp;</td></tr>
+          <tr>
+            <td colspan="2" class="tableHeadColor">
+              <!--&nbsp;-->
+              <div class="submit">
+              <%= button_to_function raw('Continue &raquo;'), "$('createBook1').hide();$('createBook2').show()" %>
+              </div>
+            </td>
+          </tr>
           <tr><td colspan="2" class="requiredKey"><span class="required">* </span>Required </td></tr>
           <tr>
             <td class="label">
@@ -69,7 +76,6 @@
           </tr>
           <tr>
             <td class="submit" colspan="2">
-              <p class="note" style="float:left;display:inline;margin:0;">* You will be able to edit these settings at any time from your book management page.</p>
               <%= button_to_function raw('Continue &raquo;'), "$('createBook1').hide();$('createBook2').show()" %>
             </td>
           </tr>
@@ -78,7 +84,14 @@
 
       <div id="createBook2" style="display: none;">
         <table cellspacing="1" cellpadding="0" border="0" class="edit">
-          <tr><td colspan="2" class="tableHeadColor">&nbsp;</td></tr>
+          <tr>
+            <td colspan="2" class="tableHeadColor">
+              <div class="submit">
+              <%= button_to_function raw('&laquo; Back'), "$('createBook2').hide(); $('createBook1').show();" %>
+              <%= button_to_function raw('Continue &raquo;'), "$('createBook2').hide(); $('createBook3').show();" %>
+              </div>
+            </td>
+          </tr>
           <tr><td colspan="2" class="requiredKey"><span class="required">* </span>Required </td></tr>
           <tr>
             <td class="label">
@@ -88,23 +101,17 @@
             <td class="field">
               <div style="float:right;display:inline;width:300px;height:200px;background: url(../images/placeholder.gif);border:1px solid #ccc;text-align:center;padding-top:150px;">[preview panel]</div>                
                 <ul>
-                  <li>
-                    <%= f.radio_button :theme_name, 'theme1' %>
-                    <%= f.label :theme_name, ' Traditional', :value=>'theme1' %>
-                  </li>
-                  <li>
-                    <%= f.radio_button :theme_name, 'theme2' %>
-                    <%= f.label :theme_name, ' Casual', :value=>'theme3' %>
-                  </li>
-                  <li>
-                    <%= f.radio_button :theme_name, 'theme3' %>
-                    <%= f.label :theme_name, ' Custom', :value=>'theme3' %>
-                  </li>
+                  <% for t in Theme.all %>
+                    <li>
+                      <%= f.radio_button :theme_id, t.id %>
+                      <%= f.label(:theme_id, t.name, :value=>t.id) %>
+                    </li>
+                  <% end %>
+                </ul>
             </td>
           </tr>
           <tr>
             <td class="submit" colspan="2">
-              <p class="note" style="float:left;display:inline;margin:0;">* You will be able to edit these settings at any time from your book management page.</p>
               <%= button_to_function raw('&laquo; Back'), "$('createBook2').hide(); $('createBook1').show();" %>
               <%= button_to_function raw('Continue &raquo;'), "$('createBook2').hide(); $('createBook3').show();" %>
             </td>
@@ -114,7 +121,14 @@
 
       <div id="createBook3" style="display: none;">
         <table cellspacing="1" cellpadding="0" border="0" class="edit">
-          <tr><td colspan="2" class="tableHeadColor">&nbsp;</td></tr>
+          <tr>
+            <td colspan="2" class="tableHeadColor">
+              <div class="submit">
+              <%= button_to_function raw('&laquo; Back'), "$('createBook3').hide(); $('createBook2').show();" %>
+              <%= f.submit raw("Submit &raquo;") %>
+              </div>
+            </td>
+          </tr>
           <tr><td colspan="2" class="requiredKey"><span class="required">* </span>Required </td></tr>
           <tr>
             <td class="label">
@@ -152,11 +166,12 @@
           </tr>
           <tr>
             <td class="submit" colspan="2">
-              <p class="note" style="float:left;display:inline;margin:0;">* You will be able to edit these settings at any time from your book management page.</p>
               <%= button_to_function raw('&laquo; Back'), "$('createBook3').hide(); $('createBook2').show();" %>
-              <%= f.submit raw("Create Book &raquo;") %>
+              <%= f.submit raw("Submit &raquo;") %>
             </td>
           </tr>
         </table>
       </div>
+  <p class="note" style="float:left;display:inline;margin:0;">You will be able to edit these settings at any time from your book management page.</p>
 <% end %>
+

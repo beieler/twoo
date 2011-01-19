@@ -267,9 +267,8 @@ table.edit td.tableHeadColor {width:870px;padding:6px 15px;background: #ede8d2;c
 table.edit td.tableHeadColor .addEntry {float:right;display:inline;width:834px;text-align:right;}
 table.edit td.tableHeadColor .addEntry a {position:relative;margin-left:5px;padding:2px 15px;background:#a62915;border:1px solid #c00;border-bottom: 2px solid #300;border-right: 2px solid #300;color:#fff;font-weight:bold;text-decoration:none;}
 table.edit td.tableHeadColor .addEntry a:hover {background-color:#900;}
-	
-	
-table.edit td.label {width:286px !important;text-align:right;}
+
+
 table.edit td.label label, table.edit td.label  {color:#666;font-size:12px !important;font-weight:bold;}
 table.edit td.field {width:570px !important;background-color:#f5f5f5;}	
 table.edit td.twoCol {width:856px !important;}
@@ -288,7 +287,8 @@ table.edit td.submit {padding:5px  15px;background: #efefef url(../images/bg_bar
 .submit input:hover {background:#666;border:1px solid #000;border-bottom: 2px solid #000; border-right: 2px solid #000; color:#fff;cursor:pointer;}
 				
 .submit input.skipSteps {margin-right:0 !important;background:#333;border:1px solid #666;border-bottom: 2px solid #666; border-right: 2px solid #666; color:#fff;cursor:pointer;}
-		
+td.tableHeadColor .submit {text-align:right;}
+
 /* used on login and account sign up */
 table.small, table.small td.tableHeadColor {width:415px;}	
 table.small td.label {width:195px;}

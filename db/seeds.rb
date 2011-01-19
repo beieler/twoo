@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+themes = Theme.create([
+                      {:name=>'Traditional'},
+                      {:name=>'Casual'},
+                      {:name=>'Custom'},
+])
+
+
