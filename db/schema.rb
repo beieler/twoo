@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110118212554) do
+ActiveRecord::Schema.define(:version => 20110119070049) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -33,6 +33,10 @@ ActiveRecord::Schema.define(:version => 20110118212554) do
     t.text     "epilogue"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "preface_include",           :default => true
+    t.boolean  "dedication_include",        :default => true
+    t.boolean  "epilogue_include",          :default => true
+    t.boolean  "contributors_list_include", :default => true
   end
 
   create_table "subjects", :force => true do |t|
