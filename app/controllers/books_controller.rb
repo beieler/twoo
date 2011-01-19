@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.xml
   def index
-    @books = Book.all
+    @books = current_user.account.books
 
     respond_to do |format|
       format.html # index.html.erb
