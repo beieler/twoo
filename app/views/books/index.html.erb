@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>User</th>
+    <th>Account</th>
     <th>Subject</th>
     <th>Theme</th>
     <th>Title</th>
@@ -19,9 +19,9 @@
 
 <% @books.each do |book| %>
   <tr>
-    <td><%= book.user %></td>
-    <td><%= book.subject %></td>
-    <td><%= book.theme %></td>
+    <td><%= book.account.name %></td>
+    <td><%= book.subject_name %></td>
+    <td><%= book.theme.name %></td>
     <td><%= book.title %></td>
     <td><%= book.occasion %></td>
     <td><%= book.question %></td>
