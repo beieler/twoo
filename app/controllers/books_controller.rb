@@ -13,6 +13,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.xml
   def show
+    # Mystery: We are using @account. Where is it set?
     @book = Book.find(params[:id])
 
     respond_to do |format|
@@ -40,11 +41,13 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.xml
   def create
-    @book = Book.new(params[:book])
+    account = current_user.account
+    @book = account.books.create(params[:book])
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to(@book, :notice => 'Book was successfully created.') }
+        #format.html { redirect_to(@book, :notice => 'Book was successfully created.') }
+        format.html # create.html.erb
         format.xml  { render :xml => @book, :status => :created, :location => @book }
       else
         format.html { render :action => "new" }
