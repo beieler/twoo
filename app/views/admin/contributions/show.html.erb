@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Account:</b>
+  <%= @contribution.account %>
+</p>
+
+<p>
+  <b>Book:</b>
+  <%= @contribution.book %>
+</p>
+
+<p>
+  <b>Sig:</b>
+  <%= @contribution.sig %>
+</p>
+
+<p>
+  <b>Extra:</b>
+  <%= @contribution.extra %>
+</p>
+
+<p>
+  <b>Wisdom:</b>
+  <%= @contribution.wisdom %>
+</p>
+
+<p>
+  <b>Invitation:</b>
+  <%= @contribution.invitation %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @contribution.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_contribution_path([:admin, @contribution]) %> |
+<%= link_to 'Back', admin_contributions_path %>
