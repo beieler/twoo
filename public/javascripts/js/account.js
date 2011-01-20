@@ -8,9 +8,7 @@ function drawTables() {
 function drawTableBooksCreated() {
     var tr, td, alt;
     alt = true;
-    tbody = document.getElementById('tbodyBooksCreated');
-    // remove existing rows, if any
-    clearTable(tbody);
+    tbody = document.createElement("tbody");
     // loop through data source
     for (var i = 0; i < jsBooksCreated.length; i++) {
         alt = !alt;
@@ -20,15 +18,21 @@ function drawTableBooksCreated() {
         //td.setAttribute("align", "center");
         td.innerHTML = jsBooksCreated[i].modified;
         td = tr.insertCell(tr.cells.length);
-        td.innerHTML = jsBooksCreated[i].title;
+        td.innerHTML = '<a href="/books/'
+          + jsBooksCreated[i].id
+          + '">'
+          + jsBooksCreated[i].title
+          + '</a>';
         td = tr.insertCell(tr.cells.length);
         td.innerHTML = jsBooksCreated[i].status;
         td = tr.insertCell(tr.cells.length);
-        td.innerHTML = 'link';
+        td.innerHTML = jsBooksCreated[i].num_contributions;
         //td = tr.insertCell(tr.cells.length);
         //td.setAttribute("align", "center");
         //td.innerHTML = jsBooksCreated[i].winScore + " - " + jsBooksCreated[i].losScore;
     }
+    old_tbody = document.getElementById("tbodyBooksCreated");
+    replaceTbody(tbody, old_tbody);
 }
 
 // Draw table from 'jsContributions' array of objects
@@ -50,9 +54,9 @@ function drawTableContributions() {
         td = tr.insertCell(tr.cells.length);
 	//'<div align="center"><a href="contribute.html">Make Contr...</a></div>'
         td.setAttribute("align", "center");
-        td.innerHTML = '<a href="contribute.html?book_id='
-	    + jsContributions[i].book_id
-	    + '">Make or Edit Contribution&raquo;</a>';
+        td.innerHTML = '<a href="/contributions/'
+	    + jsContributions[i].contr_id
+	    + '">Edit &raquo;</a>';
         td = tr.insertCell(tr.cells.length);
         td.innerHTML = jsContributions[i].status;
         td = tr.insertCell(tr.cells.length);
@@ -60,6 +64,19 @@ function drawTableContributions() {
         td.setAttribute("class", "center");
         td.innerHTML = 'Book|PDF';
    }
+}
+
+// Replace old tbody with new, assuming there
+// is only one in the list of tbodies for the its table.
+function replaceTbody(newt, oldt) {
+  var theTable = oldt.parentNode;
+  var df = document.createDocumentFragment();
+  var id = oldt.id;
+  //alert("Replace id:" + id);
+  //oldt.id = 'random';
+  newt.id = id;
+  df.appendChild(newt);
+  theTable.replaceChild(df, oldt)
 }
 
 // Remove existing table rows
@@ -77,7 +94,8 @@ function sortBooksCreated(func) {
     jsBooksCreated.sort(func);
   }
   jsSortReversed = !jsSortReversed;
-  drawTableBooksCreated()
+  setTimeout(function(){drawTableBooksCreated();}, 0);
+  //drawTableBooksCreated()
   return false
 }
 

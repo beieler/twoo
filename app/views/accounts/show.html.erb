@@ -10,10 +10,10 @@
   <table id="tableBooksCreated" cellspacing="1" cellpadding="0" border="0" class="edit medium">
     <thead>
       <tr>
-        <th class="date" style="width:100px;"><a href="#" onClick="sortBooksCreated(byModified)"><img src="/images/icon_sort.gif" />Modified</a></th>
-        <th class="type" style="width:270px;"><a href="#" onClick="sortBooksCreated(byTitle)"><img src="/images/icon_sort.gif" />Book Title</a></th>
+        <th class="date" style="width:100px;"><button onClick="sortBooksCreated(byModified)"><img src="/images/icon_sort.gif" />Modified</button></th>
+        <th class="type" style="width:270px;"><img src="/images/icon_sort.gif" onClick="sortBooksCreated(byTitle)" />Book Title</th>
         <th class="date" style="width:100px;"><a href="#" onClick="sortBooksCreated(byStatus)"><img src="/images/icon_sort.gif" />Print Status</a></th>                    
-        <th style="width:100px;"></th>
+        <th style="width:100px;">Contributors</th>
     </tr>                
     </thead>
   <tbody id="tbodyBooksCreated">
@@ -29,7 +29,7 @@
       <!-- was: width="124" height="178"-->
       <thead>
 	<tr>
-          <th width="119" class="date" style="width:100px;"><div align="justify"><a href="#" onClick="sortContributions(byContributed)"><img src="/images/icon_sort.gif" />Contribution Date</a></div></th>
+          <th width="119" class="date" style="width:100px;"><div align="justify"><button onClick="sortContributions(byContributed)"><img src="/images/icon_sort.gif" />Contribution Date</button></div></th>
           <th width="181" class="type" style="width:160px;"><a href="#" onClick="sortContributions(byTitle)"><img src="/images/icon_sort.gif" />Book Title</a></th>
           <th width="114" class="date" style="width:90px;"><a href="#"><img src="/images/icon_sort.gif" />Contribution</a></th>
           <th width="124" class="date" style="width:110px;"><a href="#" onClick="sortContributions(byStatus)"><img src="/images/icon_sort.gif" />Print & Ship Status</a></th>   
@@ -91,46 +91,64 @@ var jsSortReversed = false;
 var jsBooksCreated = new Array();
 var jsContributions = new Array();
 
-jsBooksCreated[0] = {title:'<%= Faker::Lorem.words(3).join(" ") %>',
+jsBooksCreated[0] = {id: '',
+  title:'<%= Faker::Lorem.words(3).join(" ") %>',
   modified: '<%= Time.now %>', 
+  num_contributions: '0',
   status: 'Printed'};
-jsBooksCreated[1] = {title:"Uruguay", modified:1930,
+jsBooksCreated[1] = {id: '',
+  title:"Uruguay", modified:1930,
+  num_contributions: '0',
   status: 'Not Printed'};
-jsBooksCreated[2] = {title:"France", modified:1938,
+jsBooksCreated[2] = {id: '',
+  title:"France", modified:1938,
+  num_contributions: '0',
   status: 'Not Printed'};
-jsBooksCreated[3] = {title:"Brazil", modified:1950,
+jsBooksCreated[3] = {id: '',
+  title:"Brazil", modified:1950,
+  num_contributions: '0',
   status: 'Printed'};
-jsBooksCreated[4] = {title:"Switzerland", modified:1954,
+jsBooksCreated[4] = {id: '',
+  title:"Switzerland", modified:1954,
+  num_contributions: '0',
   status: 'Printed'};
 <% for book in @account.books %>
 jsBooksCreated.push({
-  title:'<%= book.title %>',
-  modified:'<%= Time.now %>',
+  id: '<%= book.id %>',
+  title: '<%= book.title %>',
+  modified: '<%= Time.now %>',
+  num_contributions: '<%= book.contributions.length %>',
   status: 'Not Printed'
 });
 <% end %>
 
 jsContributions[0] = {title:'<%= Faker::Lorem.words(3).join(" ") %>',
   contributed: '<%= Time.now %>', 
-  book_id: 1,
+  book_id: -1,
+  contr_id: -1,
   status: 'Printed'};
 jsContributions[1] = {title:"Uruguay", contributed:1930,
-  book_id: 2,
+  book_id: -2,
+  contr_id: -1,
   status: 'Not Printed'};
 jsContributions[2] = {title:"France", contributed:1938,
-  book_id: 3,
+  book_id: -3,
+  contr_id: -1,
   status: 'Not Printed'};
 jsContributions[3] = {title:"Brazil", contributed:1950,
-  book_id: 1,
+  book_id: -1,
+  contr_id: -1,
   status: 'Printed'};
 jsContributions[4] = {title:"Switzerland", contributed:1954,
-  book_id: 2,
+  book_id: -2,
+  contr_id: -1,
   status: 'Printed'};
 <% for contrib in @account.contributions %>
 jsContributions.push({
   title: '<%= contrib.book.title %>',
   contributed: '<%= Time.now  %>',
-  book_id: <%= contrib.book.id %>,
+  book_id: '<%= contrib.book.id %>',
+  contr_id: '<%= contrib.id %>',
   status: 'Book|PDF'});
 <% end %>
 
