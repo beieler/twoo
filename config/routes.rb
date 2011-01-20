@@ -1,15 +1,16 @@
 Twoo::Application.routes.draw do
   resources :contributions
-
   resources :books
   resources :subjects
   resources :themes
   resources :accounts
 
   namespace :admin do
+    resources :contributions
     resources :books
     resources :subjects
     resources :themes
+    resources :accounts
   end
 
   devise_for :users, :controllers => { :registrations => "users/registrations" }
@@ -50,6 +51,8 @@ Twoo::Application.routes.draw do
   # For devise sign_in.
   match '/home/index' => 'home#index', :as => 'user_root'
   
+  match '/admin' => 'home#admin'
+
   # For devise sign_out.
   root :to => "home#index" # no effect until we del public/index.html
 end

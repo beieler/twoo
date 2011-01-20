@@ -3,9 +3,7 @@
   <h2>Your Books</h2>   
   <h3>Books you've created
     <div class="addEntry">
-      <a href="account_createBook1.html" title="Create A New Book">
-        Create A New Book &raquo;
-      </a>
+      <%= link_to raw("Create A New Book &raquo;"), new_book_path, :title=>"Create A New Book" %>
     </div>
   </h3>
 
@@ -128,19 +126,17 @@ jsContributions[3] = {title:"Brazil", contributed:1950,
 jsContributions[4] = {title:"Switzerland", contributed:1954,
   book_id: 2,
   status: 'Printed'};
-/*
-{% for contrib in contributions%}
+<% for contrib in @account.contributions %>
 jsContributions.push({
-  title: '{{ contrib.book.title }}',
-  contributed: '{% now "U.m" %}',
-  book_id: {{ contrib.book.id }},
+  title: '<%= contrib.book.title %>',
+  contributed: '<%= Time.now  %>',
+  book_id: <%= contrib.book.id %>,
   status: 'Book|PDF'});
-{% endfor %}
-*/
+<% end %>
 
 function start()
 {
-  alert("bye");
+  //alert("bye");
   drawTables();
 }
   </script>

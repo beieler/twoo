@@ -29,7 +29,7 @@
 
     <!---header: links, mast graphic--->
     <ul class="logOut">            	
-      <li class="admin"><%= link_to('Admin [temporary]', accounts_path) %></li>
+      <li class="admin"><%= link_to('Admin [temporary]', '/admin') %></li>
 <% if user_signed_in? %>
       <li><%= link_to('Your Account', current_user.account) %></li>
       <li><%= link_to('Sign Out', destroy_user_session_path) %></li>

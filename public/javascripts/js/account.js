@@ -1,4 +1,4 @@
-alert('there');
+//alert('there');
 function drawTables() {
     drawTableBooksCreated();
     drawTableContributions();
