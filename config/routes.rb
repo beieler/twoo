@@ -1,16 +1,20 @@
 Twoo::Application.routes.draw do
   resources :contributions
-  resources :books
   resources :subjects
   resources :themes
   resources :accounts
+  resources :books do
+    member do
+      get 'manage'
+    end
+  end
 
   namespace :admin do
     resources :contributions
-    resources :books
     resources :subjects
     resources :themes
     resources :accounts
+    resources :books
   end
 
   devise_for :users, :controllers => { :registrations => "users/registrations" }

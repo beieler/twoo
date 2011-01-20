@@ -20,13 +20,17 @@ function drawTableBooksCreated() {
         td = tr.insertCell(tr.cells.length);
         td.innerHTML = '<a href="/books/'
           + jsBooksCreated[i].id
-          + '">'
+          + '/manage">'
           + jsBooksCreated[i].title
           + '</a>';
         td = tr.insertCell(tr.cells.length);
         td.innerHTML = jsBooksCreated[i].status;
         td = tr.insertCell(tr.cells.length);
-        td.innerHTML = jsBooksCreated[i].num_contributions;
+        td.innerHTML = '<a href="/books/'
+          + jsBooksCreated[i].id
+          + '">'
+          + jsBooksCreated[i].num_contributions
+          + '</a>';
         //td = tr.insertCell(tr.cells.length);
         //td.setAttribute("align", "center");
         //td.innerHTML = jsBooksCreated[i].winScore + " - " + jsBooksCreated[i].losScore;
