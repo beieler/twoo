@@ -50,7 +50,7 @@ conts = []
 
 for b in Book.all do
   a = Account.first
-  c = b.contributors.create!(:account=>a, :wisdom=>'N/A')
+  c = a.contributions.create!(:book=>b, :wisdom=>'N/A')
   conts.push(c)
 end
 print "conts:", conts.length, "\n"
