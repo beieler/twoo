@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  account: 
+  book: 
+  sig: MyString
+  extra: MyText
+  wisdom: MyText
+  invitation: MyString
+  status: 1
+
+two:
+  account: 
+  book: 
+  sig: MyString
+  extra: MyText
+  wisdom: MyText
+  invitation: MyString
+  status: 1
