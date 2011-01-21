@@ -20,13 +20,13 @@ function drawTableBooksCreated() {
         td = tr.insertCell(tr.cells.length);
         td.innerHTML = '<a href="/books/'
           + jsBooksCreated[i].id
-          + '/manage">'
+          + '">'
           + jsBooksCreated[i].title
           + '</a>';
         td = tr.insertCell(tr.cells.length);
         td.innerHTML = jsBooksCreated[i].status;
         td = tr.insertCell(tr.cells.length);
-        td.innerHTML = '<a href="/books/'
+        td.innerHTML = '<a href="/contributions/new?book_id='
           + jsBooksCreated[i].id
           + '">'
           + jsBooksCreated[i].num_contributions

@@ -24,7 +24,8 @@ class ContributionsController < ApplicationController
   # GET /contributions/new
   # GET /contributions/new.xml
   def new
-    @contribution = Contribution.new
+    @book = Book.find(params[:book_id])
+    @contribution = @book.contributions.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,7 +45,7 @@ class ContributionsController < ApplicationController
 
     respond_to do |format|
       if @contribution.save
-        format.html { redirect_to(@contribution, :notice => 'Contribution was successfully created.') }
+        format.html #{ redirect_to(@contribution, :notice => 'Contribution was successfully created.') }
         format.xml  { render :xml => @contribution, :status => :created, :location => @contribution }
       else
         format.html { render :action => "new" }

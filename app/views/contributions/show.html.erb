@@ -1,40 +1,20 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Account:</b>
-  <%= @contribution.account %>
-</p>
-
-<p>
-  <b>Book:</b>
-  <%= @contribution.book %>
-</p>
-
-<p>
-  <b>Sig:</b>
-  <%= @contribution.sig %>
-</p>
-
-<p>
-  <b>Extra:</b>
-  <%= @contribution.extra %>
-</p>
-
-<p>
-  <b>Wisdom:</b>
-  <%= @contribution.wisdom %>
-</p>
-
-<p>
-  <b>Invitation:</b>
-  <%= @contribution.invitation %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @contribution.status %>
-</p>
-
-
-<%= link_to 'Edit', edit_contribution_path(@contribution) %> |
-<%= link_to 'Back', contributions_path %>
+                 <p id="notice"><%= notice %></p>
+            
+                 <h1>Your Contribution <span> to '<%= @contribution.book.title %>' </span></h1>  
+            
+          <table cellspacing="1" cellpadding="0" border="0" class="edit">            
+            <tr><td colspan="2" class="tableHeadColor">&nbsp;</td></tr>    
+            <tr>                       
+               <td class="field" colspan="2">
+               <p>Suspendisse nunc urna, sodales non vestibulum et, consectetur non arcu. Suspendisse lectus sem, lobortis at elementum et, euismod eget lectus. Etiam tortor ante, hendrerit sit amet eleifend ut, imperdiet consequat nunc. Vestibulum lectus ligula, suscipit eu lacinia et, semper vitae massa. Duis tempor laoreet lacus eu scelerisque.</p>
+               <p>Suspendisse nunc urna, sodales non vestibulum et, consectetur non arcu. Suspendisse lectus sem, lobortis at elementum et, euismod eget lectus. Etiam tortor ante, hendrerit sit amet eleifend ut, imperdiet consequat nunc. Vestibulum lectus ligula, suscipit eu lacinia et, semper vitae massa. Duis tempor laoreet lacus eu scelerisque.</p>
+               <p>Suspendisse nunc urna, sodales non vestibulum et, consectetur non arcu. Suspendisse lectus sem, lobortis at elementum et, euismod eget lectus. Etiam tortor ante, hendrerit sit amet eleifend ut, imperdiet consequat nunc. Vestibulum lectus ligula, suscipit eu lacinia et, semper vitae massa. Duis tempor laoreet lacus eu scelerisque.</p> 
+               <p class="sig">Firstname Lastname</p>
+              <p class="sig">Married Since 1969</p></td>
+           </tr>  
+            <tr>
+            <td class="submit" colspan="2">
+            <%= link_to "Back to Your Account", account_path(@contribution.book.account) %>
+          </td>
+            </tr>   
+            </table>  

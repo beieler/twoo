@@ -11,35 +11,71 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :account %><br />
-    <%= f.text_field :account %>
-  </div>
-  <div class="field">
-    <%= f.label :book %><br />
-    <%= f.text_field :book %>
-  </div>
-  <div class="field">
-    <%= f.label :sig %><br />
-    <%= f.text_field :sig %>
-  </div>
-  <div class="field">
-    <%= f.label :extra %><br />
-    <%= f.text_area :extra %>
-  </div>
-  <div class="field">
-    <%= f.label :wisdom %><br />
-    <%= f.text_area :wisdom %>
-  </div>
-  <div class="field">
-    <%= f.label :invitation %><br />
-    <%= f.text_field :invitation %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div id="compose-contribution">
+  <h1><span>Compose Contribution (Step 2 of 3)</span></h1>
+  <table cellspacing="1" cellpadding="0" border="0" class="edit">
+            <tr><td colspan="2" class="tableHeadColor">&nbsp;</td></tr>            
+            <tr><td colspan="2" class="requiredKey"><span class="required">* </span>Required </td></tr>            
+            <tr>
+            	<td class="label">The Question:</td>
+               	<td class="field">
+<%= @book.question %>
+               <br /><br />                
+                Not sure what to write? <a href="">View A Sample Contribution to This Book &raquo;</a>                </td>
+           	</tr>             
+            <tr>
+               <td class="label"><label for="editContribution"><span class="required">* </span>Your Contribution:</label></td>            
+               <td class="field"><textarea name="wisdom"
+            cols="" rows="6" maxlength=200 id="editContribution">
+<%= @contribution.wisdom %>
+		 </textarea></td>
+           	</tr>
+            <tr>
+              <td class="label"><label for="label"></label>
+              <label for="label2"><span class="style2">*</span> Your Name:</label></td>
+              <td class="field"><p>
+                  <input name="your_name" type="" id="label"
+            maxlength="200" value="<%= @contribution.sig %>" class="text" />
+              </p></td>
+            </tr>  
+           	<tr>
+              <td height="50" class="label"><label
+            for="yourName"></label>
+<%= @book.extra %>:</td>
+           	  <td class="field"><p>
+           	    <input name="extra_answers" type=""
+            id="id_extra_answers" maxlength="200" value=
+		    "<%= @contribution.extra %>" class="text" />
+           	  </p>       	      </td>
+         	  </tr>       
+            <tr>
+            	<td class="submit" colspan="2">
+                  <%= button_to_function raw('Preview &amp; Finalize &raquo;'), "$('compose-contribution').hide(); $('approve-contribution').show();" %>
+            	</td>
+            </tr>   
+          </table>
+</div>
+
+<div id="approve-contribution" style="display:none;">
+<h1><span>Approve &amp; Submit (Step 3 of 3)</span></h1>  
+            <table cellspacing="1" cellpadding="0" border="0" class="edit">            
+            <tr><td colspan="2" class="tableHeadColor">&nbsp;</td></tr>    
+            <tr>                       
+	      <td class="field" colspan="2">
+               <p>Suspendisse nunc urna, sodales non vestibulum et, consectetur non arcu. Suspendisse lectus sem, lobortis at elementum et, euismod eget lectus. Etiam tortor ante, hendrerit sit amet eleifend ut, imperdiet consequat nunc. Vestibulum lectus ligula, suscipit eu lacinia et, semper vitae massa. Duis tempor laoreet lacus eu scelerisque.</p>
+		 <p>
+		 <%= 'we need javascript WISDOM' %>
+		 </p>
+		 <p class="sig"> <%= 'we need js SIG' %> </p>
+              <p class="sig"> <%= 'we need js EXTRA' %> </p></td>
+           </tr>  
+            <tr>
+            	<td class="submit" colspan="2">
+                  <%= button_to_function raw('&laquo; Revise'), "$('approve-contribution').hide(); $('compose-contribution').show();", :class=>"cancel" %>
+                  <%= f.submit 'Approve & Submit' %>
+		</td>
+            </tr>   
+            </table>  
+</div>
+
 <% end %>

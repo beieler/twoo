@@ -84,15 +84,5 @@ class BooksController < ApplicationController
     end
   end
 
-  # GET /books/1/manage
-  def manage
-    @account = current_user.account
-    @book = Book.find(params[:id])
-
-    respond_to do |format|
-      format.html # manage.html.erb
-    end
-  end
-
 end
 # Copyright (c) 2010 Christopher Dunn.
