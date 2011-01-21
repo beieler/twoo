@@ -14,39 +14,53 @@
 <div id="compose-contribution">
   <h1><span>Compose Contribution (Step 2 of 3)</span></h1>
   <table cellspacing="1" cellpadding="0" border="0" class="edit">
-            <tr><td colspan="2" class="tableHeadColor">&nbsp;</td></tr>            
+          <tr>
+            <td colspan="2" class="tableHeadColor">
+              <!--&nbsp;-->
+              <div class="submit">
+                  <%= button_to_function raw('Preview &amp; Finalize &raquo;'), "$('compose-contribution').hide(); $('approve-contribution').show();" %>
+              </div>
+            </td>
+          </tr>
             <tr><td colspan="2" class="requiredKey"><span class="required">* </span>Required </td></tr>            
             <tr>
-            	<td class="label">The Question:</td>
-               	<td class="field">
-<%= @book.question %>
-               <br /><br />                
-                Not sure what to write? <a href="">View A Sample Contribution to This Book &raquo;</a>                </td>
-           	</tr>             
+              <td class="label">
+                The Question:
+              </td>
+              <td class="field">
+                <%= @contribution.book.question %>
+                <br /><br />                
+                Not sure what to write? (Ryan, what goes here?)
+                <a href="">View A Sample Contribution to This Book &raquo;</a>
+              </td>
+            </tr>             
             <tr>
-               <td class="label"><label for="editContribution"><span class="required">* </span>Your Contribution:</label></td>            
-               <td class="field"><textarea name="wisdom"
-            cols="" rows="6" maxlength=200 id="editContribution">
-<%= @contribution.wisdom %>
-		 </textarea></td>
-           	</tr>
+              <td class="label">
+                <span class="required">* </span>
+                <%= f.label :wisdom, 'Your Wisdom:' %>
+              </td>
+              <td class="field">
+                <%= f.text_area :wisdom, :cols=>'', :rows=>6, :maxlength=>200 %>
+              </td>
+            </tr>
             <tr>
               <td class="label"><label for="label"></label>
-              <label for="label2"><span class="style2">*</span> Your Name:</label></td>
+                <span class="required" classwas="style2">*</span>
+                <%= f.label :sig, 'Your Name:' %>
+              </td>
               <td class="field"><p>
-                  <input name="your_name" type="" id="label"
-            maxlength="200" value="<%= @contribution.sig %>" class="text" />
+                <%= f.text_field :sig, :class=>"text", :maxlength=>200 %>
               </p></td>
             </tr>  
            	<tr>
-              <td height="50" class="label"><label
-            for="yourName"></label>
-<%= @book.extra %>:</td>
-           	  <td class="field"><p>
-           	    <input name="extra_answers" type=""
-            id="id_extra_answers" maxlength="200" value=
-		    "<%= @contribution.extra %>" class="text" />
-           	  </p>       	      </td>
+                  <td height="50" class="label">
+                    <%= f.label :extra, @contribution.book.extra %>
+                  </td>
+                  <td class="field">
+                    <p>
+                    <%= f.text_field :extra, :class=>"text", :maxlength=>200 %>
+                    </p>
+                  </td>
          	  </tr>       
             <tr>
             	<td class="submit" colspan="2">
@@ -58,18 +72,26 @@
 
 <div id="approve-contribution" style="display:none;">
 <h1><span>Approve &amp; Submit (Step 3 of 3)</span></h1>  
-            <table cellspacing="1" cellpadding="0" border="0" class="edit">            
-            <tr><td colspan="2" class="tableHeadColor">&nbsp;</td></tr>    
+            <table cellspacing="1" cellpadding="0" border="0" class="edit">
+          <tr>
+            <td colspan="2" class="tableHeadColor">
+              <!--&nbsp;-->
+              <div class="submit">
+                  <%= button_to_function raw('&laquo; Revise'), "$('approve-contribution').hide(); $('compose-contribution').show();", :class=>"cancel" %>
+                  <%= f.submit 'Approve & Submit' %>
+              </div>
+            </td>
+          </tr>
             <tr>                       
 	      <td class="field" colspan="2">
-               <p>Suspendisse nunc urna, sodales non vestibulum et, consectetur non arcu. Suspendisse lectus sem, lobortis at elementum et, euismod eget lectus. Etiam tortor ante, hendrerit sit amet eleifend ut, imperdiet consequat nunc. Vestibulum lectus ligula, suscipit eu lacinia et, semper vitae massa. Duis tempor laoreet lacus eu scelerisque.</p>
+                <p><%= Faker::Lorem.paragraph 5 %></p>
 		 <p>
 		 <%= 'we need javascript WISDOM' %>
 		 </p>
 		 <p class="sig"> <%= 'we need js SIG' %> </p>
-              <p class="sig"> <%= 'we need js EXTRA' %> </p></td>
+                 <p class="sig"> <%= 'we need js EXTRA' %> </p></td>
            </tr>  
-            <tr>
+           <tr>
             	<td class="submit" colspan="2">
                   <%= button_to_function raw('&laquo; Revise'), "$('approve-contribution').hide(); $('compose-contribution').show();", :class=>"cancel" %>
                   <%= f.submit 'Approve & Submit' %>
@@ -77,5 +99,8 @@
             </tr>   
             </table>  
 </div>
+
+<%= f.hidden_field :book_id %>
+<%= f.hidden_field :account_id %>
 
 <% end %>

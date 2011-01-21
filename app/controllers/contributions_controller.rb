@@ -24,8 +24,9 @@ class ContributionsController < ApplicationController
   # GET /contributions/new
   # GET /contributions/new.xml
   def new
-    @book = Book.find(params[:book_id])
-    @contribution = @book.contributions.build
+    @contribution = current_user.account.contributions.build
+    book = Book.find(params[:book_id]) # Verify existence of book.
+    @contribution.book_id = book.id
 
     respond_to do |format|
       format.html # new.html.erb
