@@ -6,15 +6,13 @@
             <tr><td colspan="2" class="tableHeadColor">&nbsp;</td></tr>    
             <tr>                       
                <td class="field" colspan="2">
-               <p>Suspendisse nunc urna, sodales non vestibulum et, consectetur non arcu. Suspendisse lectus sem, lobortis at elementum et, euismod eget lectus. Etiam tortor ante, hendrerit sit amet eleifend ut, imperdiet consequat nunc. Vestibulum lectus ligula, suscipit eu lacinia et, semper vitae massa. Duis tempor laoreet lacus eu scelerisque.</p>
-               <p>Suspendisse nunc urna, sodales non vestibulum et, consectetur non arcu. Suspendisse lectus sem, lobortis at elementum et, euismod eget lectus. Etiam tortor ante, hendrerit sit amet eleifend ut, imperdiet consequat nunc. Vestibulum lectus ligula, suscipit eu lacinia et, semper vitae massa. Duis tempor laoreet lacus eu scelerisque.</p>
-               <p>Suspendisse nunc urna, sodales non vestibulum et, consectetur non arcu. Suspendisse lectus sem, lobortis at elementum et, euismod eget lectus. Etiam tortor ante, hendrerit sit amet eleifend ut, imperdiet consequat nunc. Vestibulum lectus ligula, suscipit eu lacinia et, semper vitae massa. Duis tempor laoreet lacus eu scelerisque.</p> 
-               <p class="sig">Firstname Lastname</p>
-              <p class="sig">Married Since 1969</p></td>
+                 <p><%= @contribution.wisdom %></p>
+               <p class="sig"><%= @contribution.sig %></p>
+               <p class="sig"><%= @contribution.extra %></p></td>
            </tr>  
             <tr>
             <td class="submit" colspan="2">
-            <%= link_to "Back to Your Account", account_path(@contribution.book.account) %>
+            <%= link_to("Back to Your Account", @contribution.account) %>
           </td>
             </tr>   
             </table>  
