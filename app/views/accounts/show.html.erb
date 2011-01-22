@@ -1,5 +1,5 @@
 <h1>Your Account</h1>
-<div class="booksTable medium">
+<div class="booksTable">
   <h2>Your Books</h2>   
   <h3>Books you've created
     <div class="addEntry">
@@ -7,13 +7,14 @@
     </div>
   </h3>
 
-  <table id="tableBooksCreated" cellspacing="1" cellpadding="0" border="0" class="edit medium">
+  <table id="tableBooksCreated" cellspacing="1" cellpadding="0" border="0" class="edit">
     <thead>
       <tr>
-        <th class="date" style="width:100px;"><button onClick="sortBooksCreated(byModified)"><img src="/images/icon_sort.gif" />Modified</button></th>
-        <th class="type" style="width:270px;"><img src="/images/icon_sort.gif" onClick="sortBooksCreated(byTitle)" />Book Title</th>
-        <th class="date" style="width:100px;"><a href="#" onClick="sortBooksCreated(byStatus)"><img src="/images/icon_sort.gif" />Print Status</a></th>                    
-        <th style="width:100px;">Contributors</th>
+        <!-- styles were width:100,270,100,100px; -->
+        <th class="date" style=""><button onClick="sortBooksCreated(byModified)"><img src="/images/icon_sort.gif" />Modified</button></th>
+        <th class="type" style=""><img src="/images/icon_sort.gif" onClick="sortBooksCreated(byTitle)" />Book Title</th>
+        <th class="date" style=""><a href="#" onClick="return sortBooksCreated(byStatus);"><img src="/images/icon_sort.gif" />Print Status</a></th>                    
+        <th style="">Contributors</th>
     </tr>                
     </thead>
   <tbody id="tbodyBooksCreated">
@@ -21,19 +22,21 @@
    </table>         
 </div>
 
-<div class="booksTable medium">
+<div class="booksTable">
   <h2>Your Contributions</h2>
 
   <div class="tableHeadColor list" style="float:left;display:inline;width:300px;font-weight:bold;">Books You've Been Invited to Contribute To</div>
-    <table id="tableContributions" border="0" cellpadding="0" cellspacing="1" class="edit medium">
+    <table id="tableContributions" border="0" cellpadding="0" cellspacing="1" class="edit">
       <!-- was: width="124" height="178"-->
       <thead>
 	<tr>
-          <th width="119" class="date" style="width:100px;"><div align="justify"><button onClick="sortContributions(byContributed)"><img src="/images/icon_sort.gif" />Contribution Date</button></div></th>
-          <th width="181" class="type" style="width:160px;"><a href="#" onClick="sortContributions(byTitle)"><img src="/images/icon_sort.gif" />Book Title</a></th>
-          <th width="114" class="date" style="width:90px;"><a href="#"><img src="/images/icon_sort.gif" />Contribution</a></th>
-          <th width="124" class="date" style="width:110px;"><a href="#" onClick="sortContributions(byStatus)"><img src="/images/icon_sort.gif" />Print & Ship Status</a></th>   
-          <th width="118" class="date" style="width:100px;"><a href="#"><img src="/images/icon_sort.gif" />Purchase</a></th>
+          <!-- style was "width:100,160,90,110,100px" -->
+          <!-- width was "119,181,114,124,118" -->
+          <th class="date"><div align="justify"><button onClick="sortContributions(byContributed)"><img src="/images/icon_sort.gif" />Contribution Date</button></div></th>
+          <th class="type"><a href="#" onClick="return sortContributions(byTitle);"><img src="/images/icon_sort.gif" />Book Title</a></th>
+          <th class="date">Contribution</th>
+          <th class="date"><a href="#" onClick="return sortContributions(byStatus);"><img src="/images/icon_sort.gif" />Print & Ship Status</a></th>   
+          <th class="date">Purchase</th>
         </tr>
       </thead>
       <tbody id="tbodyContributions">
@@ -41,44 +44,32 @@
     </table>            
   </div>
     
-    <div class="nodivider">&nbsp;</div>
-
-    <div class="sideBar">
-      <h2>Your Profile</h2>
-
+<div class="booksTable">
+  <h2>Your Profile</h2>   
+<p>
+  <b>Name:</b>
+  <%= @account.name %>
+</p>
       <ul class="account">
           <li><a href="account_updateEmail.html">Update Email &raquo;</a></li>
           <li><a href="account_updatePassword.html">Update Password  &raquo;</a></li>
       </ul>
       <ul class="account">
-        <li><a href="account_deleteAccount.html">Delete Account &raquo;</a></li>
+        <li><%= button_to(
+          raw("Delete Account &raquo"),
+          {:action=>"destroy", :id=>@account.id},
+          :method=>:delete,
+          :confirm=>"Deleting your account would remove all your contributions from any books, and would destroy any books which you've created. Are you sure?") %>
+          Chris: We should delete the whole 'devise' User.
+          </li>
         <li></li>
       </ul>
-    </div>
-
 
 </div>
 
-<p id="notice"><%= notice %></p>
+    <!--div class="nodivider">&nbsp;</div-->
 
-<p>
-  <b>Name:</b>
-  <%= @account.name %>
-</p>
-
-<p>
-  <b>Terms:</b>
-  <%= @account.terms %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @account.user_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_account_path(@account) %> |
-<%= link_to 'Back', accounts_path %>
+    <!--div class="sideBar"> </div-->
 
 <script type="text/javascript" src="../javascripts/js/account.js">
 </script>

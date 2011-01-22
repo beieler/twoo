@@ -1,5 +1,5 @@
 
-<%= link_to 'Your Account', account_path(@account), :class=>'right' %>
+<%= link_to 'Your Account', current_user.account, :class=>'right' %>
 
 <h1>Manage Book  &raquo; <span>'Sample Book Title'</span></h1>            
 
@@ -57,27 +57,30 @@
     
     <div class="pagination bottom"><!--<a href="">&laquo; Back</a>--><a href="" class="current">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a><a href="">Next &raquo;</a>&nbsp;&nbsp;<a href="">View All</a></div>       
             
-    <table cellspacing="1" cellpadding="0" border="0" class="edit">            
-    <tr>
+  <table cellspacing="1" cellpadding="0" border="0" class="edit">            
+    <thead>
+      <tr>
         <td colspan="4" class="tableHeadColor">Contributors: 26
         <div class="addEntry">   
             <!--<a href="manageBook_contributorImport.html" title="Import Contributors">Import Contacts or Add New Contributor &raquo;</a> -->                                                
             <a href="manageBook_emailContributors.html" />Email Contributors &raquo;</a> <a href="manageBook_contributionAdd.html" title="Add Contributor">Add Contribution &raquo;</a>                                                
         </div>
         </td>
-    </tr>     
-    <tr>
-        <th class="date" style="width:80px;"><a href=""><img src="images/icon_sort.gif" />Added</a></th>
-        <th class="type" style="width:200px;"><a href=""><img src="images/icon_sort.gif" />Contributor</a></th>
+      </tr>     
+      <tr>
+        <th class="date" style="width:80px;"><a href=""><img src="/images/icon_sort.gif" />Added</a></th>
+        <th class="type" style="width:200px;"><a href=""><img src="/images/icon_sort.gif" />Contributor</a></th>
         <th class="type" style="width:250px;">Contribution</th>
         <th style="width:100px;"></th>
-     </tr>
-     <tr class="alternate">
+      </tr>
+      <thead>
+      <tbody>
+      <tr class="alternate">
         <td>2009-07-15</td>
         <td>FirstName LastName</td>
         <td>Proin malesuada volutpat luctus. Nullam id orci metus. Maecenas dictum sapien a libero porttitor ut molestie felis molestie ...</td>       
         <td class="center"><a href="manageBook_contributionEdit.html">Edit</a> | <a href="" onclick="return confirm('Do you really want to delete this contribution?')" title="Delete Item">Delete</a></td> </tr>
-     <tr>
+      <tr>
         <td>2009-07-15</td>
         <td>FirstName LastName</td>
         <td>Proin malesuada volutpat luctus. Nullam id orci metus. Maecenas dictum sapien a libero porttitor ut molestie felis molestie ...</td>       
@@ -97,6 +100,7 @@
         <td>FirstName LastName</td>
         <td>Proin malesuada volutpat luctus. Nullam id orci metus. Maecenas dictum sapien a libero porttitor ut molestie felis molestie ...</td>       
         <td class="center"><a href="manageBook_contributionEdit.html">Edit</a> | <a href="" onclick="return confirm('Do you really want to delete this contribution?')" title="Delete Item">Delete</a></td> </tr>                
+    </tbody>
     </table>
     
     <div class="pagination bottom"><!--<a href="">&laquo; Back</a>--><a href="" class="current">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a><a href="">Next &raquo;</a>&nbsp;&nbsp;<a href="">View All</a></div>

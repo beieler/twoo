@@ -1,7 +1,9 @@
 //alert('there');
 function drawTables() {
-    drawTableBooksCreated();
-    drawTableContributions();
+  setTimeout(function(){drawTableBooksCreated();}, 0);
+  setTimeout(function(){drawTableContributions();}, 0);
+    //drawTableBooksCreated();
+    //drawTableContributions();
 }
 
 // Draw table from 'jsBooksCreated' array of objects
@@ -98,8 +100,7 @@ function sortBooksCreated(func) {
     jsBooksCreated.sort(func);
   }
   jsSortReversed = !jsSortReversed;
-  setTimeout(function(){drawTableBooksCreated();}, 0);
-  //drawTableBooksCreated()
+  drawTableBooksCreated()
   return false
 }
 
