@@ -51,8 +51,8 @@
   <%= @account.name %>
 </p>
       <ul class="account">
-          <li><a href="account_updateEmail.html">Update Email &raquo;</a></li>
-          <li><a href="account_updatePassword.html">Update Password  &raquo;</a></li>
+        <li><%= link_to raw('Update Email &raquo;'), edit_user_registration_path(@account.user) %></li>
+        <li><%= link_to raw('Update Password &raquo;'), edit_user_registration_path(@account.user) %></li>
       </ul>
       <ul class="account">
         <li><%= button_to(

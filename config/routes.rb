@@ -3,8 +3,13 @@ Twoo::Application.routes.draw do
   resources :subjects
   resources :themes
   resources :accounts
-  resources :books
-
+  resources :books do
+    member do
+      get 'statistics'
+      get 'preview'
+      get 'finalize'
+    end
+  end
   namespace :admin do
     resources :contributions
     resources :subjects

@@ -1,0 +1,13 @@
+  <% if contribution_counter % 2 == 0 %>
+    <tr class="alternate">
+  <% else %>
+    <tr>
+  <% end %>
+    <td><%= contribution.updated_at.localtime.to_formatted_s(:long_ordinal) %></td>
+    <td><%= contribution.sig %></td>
+    <td><%= link_to "#{contribution.wisdom.truncate(11)}", contribution_path(contribution), :title=>'View full contribution' %></td>
+    <td class="center">
+      <%= link_to 'Edit', edit_contribution_path(contribution), :title=>'Edit contribution' %> |
+      <%= link_to 'Delete', contribution, :confirm=>'Do you really want to delete this contribution?', :method=>:delete, :title=>'Delete contribution' %>
+    </td>
+  </tr>

@@ -15,19 +15,9 @@
   </tr>
 
 <% @contributions.each do |contribution| %>
-  <tr>
-    <td><%= contribution.account %></td>
-    <td><%= contribution.book %></td>
-    <td><%= contribution.sig %></td>
-    <td><%= contribution.extra %></td>
-    <td><%= contribution.wisdom %></td>
-    <td><%= contribution.invitation %></td>
-    <td><%= contribution.status %></td>
-    <td><%= link_to 'Show', contribution %></td>
-    <td><%= link_to 'Edit', edit_contribution_path(contribution) %></td>
-    <td><%= link_to 'Destroy', contribution, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <%= render contribution %>
 <% end %>
+
 </table>
 
 <br />
