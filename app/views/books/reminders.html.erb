@@ -1,0 +1,44 @@
+            <h1>Manage Book <span>Notificaitons</span> </h1>   
+            
+            <h2>THIS PAGE STILL TBD</h2>
+          <table cellspacing="1" cellpadding="0" border="0" class="edit">            
+            <tr><td colspan="2" class="tableHeadColor">&nbsp;</td></tr>            
+            <tr><td colspan="2"  class="requiredKey"><span class="required">* </span> Required </td></tr> 
+            <tr>
+            	<td class="label"><label for="emailMe"><span class="required">* </span>Email me   each contribution made to my book:</label></td>
+                <td class="field">
+                <select name="emailMe" id="emailMe">
+                	<option>--- Select One ---</option>
+                	<option>Daily</option>
+                    <option>Weekly</option>
+                    <option>Every 2 Weeks</option>
+                    <option>Monthly</option>
+                    <option>Never</option>
+                </select>    
+                
+                </td>   
+            </tr>
+            <tr>
+            	<td class="label"><label for="emailMe2"><span class="required">* </span>???????:</label></td>
+                <td class="field">
+                <select name="emailMe2" id="emailMe2">
+                	<option>--- Select One ---</option>
+                	<option>Daily</option>
+                    <option>Weekly</option>
+                    <option>Every 2 Weeks</option>
+                    <option>Monthly</option>
+                    <option>Never</option>
+                </select>    
+                </td>   
+            </tr>
+            <tr>
+            	<td class="label"><label for="notSure1"><span class="required">* </span>???????:</label></td>
+                <td class="field"><input name="notSure1" type="" id="notSure1" maxlength="200" value="" class="text" /></td>            
+            </tr>
+            <tr>
+              <td class="submit" colspan="2">
+                <%= button_to_function raw('&laquo; Cancel'), 'window.location.href="' + book_path(@book) + '";', :class=>'cancel' %>
+                <input name="Submit" type="button"  onClick="window.location.href='manageBook.html'" value="Submit" />
+              </td>
+            </tr>   
+            </table>  

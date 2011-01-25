@@ -1,0 +1,61 @@
+<h1>Manage Book  &raquo; <span>'<%= @book.title %>'</span> </h1>   
+            <h2>THIS PAGE STILL TBD</h2>
+            
+            <div id="create_email" style="display: inline;">
+            <h1><span>'<%= @book.title %>' &raquo;   Email Contributors</span> </h1> 
+
+            <table cellspacing="1" cellpadding="0" border="0" class="edit">
+           	<tr><td colspan="2" class="tableHeadColor">&nbsp;</td></tr>
+            <tr><td colspan="2" class="requiredKey"><span>* </span>Required </td></tr>
+          	<tr>
+
+            	<td class="label"><label for="emailSubject"><span class="required">* </span>Email Subject:</label></td>
+                <td class="field"><input name="emailSubject" type="" id="emailSubject" maxlength="200" class="text" /></td>
+            </tr>
+            <tr>
+               <td class="label"><label for="other"><span class="required">* </span>Email Message:</label></td>            
+               <td class="field"><textarea name="other" cols="" rows="9" id="other"></textarea></td>
+           	</tr>
+            <tr>
+              <td class="submit" colspan="2">
+                <%= button_to_function raw('&laquo; Cancel'), "window.location.href='#{book_path(@book)}'" %>
+                <%= button_to_function raw('Preview & Finalize &raquo;'), '$("create_email").hide(); $("preview_email").show();' %>
+              </td>
+            </tr>  
+            </table>
+          </div>
+
+          <div id="preview_email" style="display: none;">
+            <h1><span>'<%= @book.title %>' &raquo;   Email Contributors &raquo;  Preview</span> </h1> 
+            
+            <table cellspacing="1" cellpadding="0" border="0" class="edit">            
+            <tr><td colspan="2" class="tableHeadColor">&nbsp;</td></tr> 
+            <tr>                       
+               <td class="field" colspan="2">
+                 <p>Subject: <%= Faker::Lorem.sentence 3 %></p>
+               <p>&nbsp;</p>
+               <p><%= Faker::Lorem.paragraph 5 %></p>
+               <p><%= Faker::Lorem.paragraph 5 %></p>
+               <p><%= Faker::Lorem.paragraph 5 %></p>
+               <p class="sig">Sincerely,<br /> Firstname Lastname</p>
+               </td>
+           </tr>
+           <tr>
+             <td colspan="2" class="field">
+               <input name="" type="checkbox" value="" checked /> Copy me on this set of emails </td></tr> 
+            <tr>
+              <td class="submit" colspan="2">
+                <%= button_to_function raw('&laquo; Revise'), '$("preview_email").hide(); $("create_email").show();' %>
+                <%= button_to_function raw('Approve and Submit'), '$("preview_email").hide(); $("approve_email").show();' %>
+              </td>
+            </tr>   
+            </table>  
+          </div>
+
+          <div id="approve_email" style="display: none;">
+            <h1><span>'<%= @book.title %>' &raquo;   Email Contributors &raquo; Confirmation</span> </h1>   
+            
+            <p>Your email has been sent successfully! (NOT REALLY)</p>
+            <%= link_to 'Manage Book', book_path(@book), :class=>'more' %>
+            <%= link_to 'Your Account', account_path(@book.account), :class=>'more' %>
+          </div>

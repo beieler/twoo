@@ -5,10 +5,13 @@ Twoo::Application.routes.draw do
   resources :accounts
   resources :books do
     member do
+      get 'reminders'
+      get 'email'
       get 'statistics'
       get 'preview'
       get 'finalize'
     end
+    resources :invitations
   end
   namespace :admin do
     resources :contributions

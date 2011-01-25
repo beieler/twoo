@@ -84,5 +84,14 @@ class BooksController < ApplicationController
     end
   end
 
+  # GET /books/1/email
+  def email
+    @book = Book.find(params[:id])
+
+    respond_to do |format|
+      format.html # email.html.erb
+    end
+  end
+
 end
 # Copyright (c) 2010 Christopher Dunn.

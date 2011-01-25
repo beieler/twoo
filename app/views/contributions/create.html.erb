@@ -1,6 +1,11 @@
 <h1>Contribution Submitted</h1>
 
-<p>Your contribution is appreciated. </p> 
-<a href="/contributions/new?book_id=xxx" class="more"><strong>Make Another Contribution (Ryan: To the same book?)</strong></a>
+<% if @contribution.book.account == current_user.account %>
+  <p>Added contribution to your book.</p>
+<%= link_to 'Manage Book', book_path(@contribution.book), :class=>"more" %>
+<% else %>
+  <p>Your contribution is appreciated. </p> 
+<% end %>
+<%= link_to content_tag(:strong, 'Make Another Contribution'), new_contribution_path(:book_id => @contribution.book), :class=>"more" %>
 or
-<%= link_to 'Go to Your Account', current_user.account %>
+<%= link_to 'Go to Your Account', current_user.account, :class=>"more" %>

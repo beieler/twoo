@@ -12,14 +12,11 @@
           <%= link_to raw('Contributor Statistics &raquo;'), statistics_book_path(@book) %>
         </li>
         <li><h3>Book Settings &amp; Invitations</h3>
-        <div class="bookOptions">
-          <%= button_to raw('Modify Book &raquo;'), {:action=>:edit}, {:class=>'pages', :method=>:get} %>
+        <div class="bookOptions pages">
+          <%= button_to raw('Modify Book &raquo;'), edit_book_path(@book), {:class=>'pages', :method=>:get} %>
+          <%= button_to raw('Invite Contributors &raquo;'), new_book_invitation_path(@book), :class=>'pages', :method=>:get %>
+          <%= button_to raw('Reminders & Notifications &raquo;'), reminders_book_path(@book), :class=>"pages", :method=>:get %>
         </div>
-          <div class="bookOptions"><input id="apply" name="apply" type="submit"onClick="window.location.href='account_invite1.html'"  value="Invite Contributors &raquo;" class="pages" />
-              <div class="bookOptions">
-                <input id="apply2" name="apply2" type="submit"onclick="window.location.href='account_editPreferences.html'"  value="Reminders & Notifications &raquo;" class="pages" />
-              </div>
-            </div>                   
         </li>  
         <li class="bookOptions"><h3>Finalize Book</h3>
           <%= button_to raw('Preview Book &raquo;'), preview_book_path(@book), :method=>:get %>
@@ -63,7 +60,7 @@
         <td colspan="4" class="tableHeadColor">Contributions: <%= @book.contributions.length %>
         <div class="addEntry">   
             <!--<a href="manageBook_contributorImport.html" title="Import Contributors">Import Contacts or Add New Contributor &raquo;</a> -->                                                
-            <a href="manageBook_emailContributors.html" />(Someday)Email Contributors &raquo;</a>
+            <%= link_to raw('Email Contributors &raquo;'), email_book_path(@book), :title=>'Email Contributors' %>
             <%= link_to raw('(Check title)Add Contribution &raquo;'), new_contribution_path(:book_id=>@book), :title=>'Add Contributor' %>
         </div>
         </td>

@@ -3,6 +3,7 @@ class Book < ActiveRecord::Base
   belongs_to :subject
   belongs_to :theme
   has_many :contributions
+  has_many :invitations
   #attr_accessor :subject_name #, :theme_name
   #before_save :require_deps
   def require_deps

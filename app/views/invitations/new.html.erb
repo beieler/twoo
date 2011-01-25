@@ -1,0 +1,184 @@
+            <h1>Invite Contributors</h1>
+            <h2>THIS PAGE STILL TBD</h2>
+<%= form_for([@book, @invitation]) do |f| %>
+
+            <div id="step1" style="display: inline;">
+              <h1><span>Add Contributors (Step 1 of 3)</span></h1>
+            <table cellspacing="1" cellpadding="0" border="0" class="edit">
+           	<tr><td colspan="2" class="tableHeadColor">&nbsp;</td></tr>
+            <tr><td colspan="2" class="requiredKey"><span class="required">* </span>Required </td></tr>
+          	<tr>	
+                <td class="label"><label for="import">Import Contacts:</label></td>
+                <td class="field">
+                <input type="radio" name="type" class="show" value="Import" /> Import from Email  <input type="radio" name="type" class="show" value="Upload" /> Upload File
+                <p class="note">* You will have an opportunity to edit your contacts after you've imported them.</p>
+            
+            		<div id="parent1" style="width:500px;padding:10px;background:#fdfdfd;border:1px solid #ccc;margin:5px 0;">     
+                        <label for="email"><span class="required">* </span>Email Address:</label><br /><input name="email" type="" id="email" maxlength="200" value="" class="smallText" style="margin-bottom:5px;" /><br />
+                    	<label for="passwordNew"><span class="required">* </span>Password:</label><br /><input name="passwordNew" type="passwordNew" id="passwordNew" maxlength="200" value=""  class="smallText" style="margin-bottom:15px;" /><br />
+                    	<input name="" type="submit" value="Import Contacts" />                     
+                    </div> 
+                    
+                    <div id="parent2" style="width:500px;padding:10px;background:#fdfdfd;border:1px solid #ccc;margin:5px 0;">        
+                    	<div>Upload File: <input type="file" id="filename" name="filename" size="30" class="" />&nbsp;<input name="" type="submit" value="Upload" />            
+                        </div>                         
+                                                      
+                    </div> 
+
+            	</td>            
+            </tr>
+            <tr>
+            	<td class="label">Would you like to add additional contacts? </td>
+                <td class="field">
+                <a id="view">Add Additional Contacts Individually &raquo;</a>
+                	
+                    <div id="exampleQuestions" style="width:270px;padding:10px;background:#fdfdfd;border:1px solid #ccc;margin:5px 0;">
+                        <label for="contributorName"><span class="required">* </span>Contributor's Name:</label><br />
+                        <input name="contributorName" type="" id="contributorName" maxlength="200" value="" class="smallText" style="margin-bottom:5px;" /><br />
+                        <label for="contributorEmail"><span class="required">* </span>Email Address:</label><br />
+                        <input name="contributorEmail" type="" id="contributorEmail" maxlength="200" value="" class="smallText" style="margin-bottom:15px;" /><br />
+                        <input name="" type="submit" value="Add Contact" />
+                    </div>
+                    
+                </td>            
+            </tr> 
+            <tr>
+            	<td class="label">Edit Imported/Added Contacts:</td>
+                <td class="field">
+                	<table cellspacing="1" cellpadding="0" border="0" class="edit small" style="width:500px;margin-top:0;">  
+                    <tr>                        
+                        <th style="width:80px;"><input name="all" type="checkbox" id="all" value="" /> <label for="all">All</th>
+                        <th class="type" style="width:200px;"><a href=""><img src="images/icon_sort.gif" />Name</a></th>
+                        <th class="type" style="width:200px;"><a href=""><img src="images/icon_sort.gif" />Email</a></th>
+                        <th style="width:120px;"></th>
+                     </tr>
+                     <tr class="alternate">
+                     	<td><input type="checkbox" /></td>
+                        <td>Name</td>    
+                        <td>person@email.com</td>       
+                        <td class="center"><a href="" onclick="return confirm('Do you really want to remove this item?')" title="Remove Item">Remove</a></a></td> 
+                     </tr>
+                     <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>Name</td>    
+                        <td>person@email.com</td>       
+                        <td class="center"><a href="" onclick="return confirm('Do you really want to remove this item?')" title="Remove Item">Remove</a></a></td> 
+                     </tr>                     
+                     <tr class="alternate">
+                        <td><input type="checkbox" /></td>
+                        <td>Name</td>    
+                        <td>person@email.com</td>       
+                        <td class="center"><a href="" onclick="return confirm('Do you really want to remove this item?')" title="Remove Item">Remove</a></a></td> 
+                     </tr>
+                     <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>Name</td>    
+                        <td>person@email.com</td>       
+                        <td class="center"><a href="" onclick="return confirm('Do you really want to remove this item?')" title="Remove Item">Remove</a></a></td> 
+                     </tr>
+                     <tr class="alternate">
+                        <td><input type="checkbox" /></td>
+                        <td>Name</td>    
+                        <td>person@email.com</td>       
+                        <td class="center"><a href="" onclick="return confirm('Do you really want to remove this item?')" title="Remove Item">Remove</a></a></td> 
+                     </tr>
+                     <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>Name</td>    
+                        <td>person@email.com</td>       
+                        <td class="center"><a href="" onclick="return confirm('Do you really want to remove this item?')" title="Remove Item">Remove</a></a></td> 
+                     </tr>
+                     <tr class="alternate">
+                        <td><input type="checkbox" /></td>
+                        <td>Name</td>    
+                        <td>person@email.com</td>       
+                        <td class="center"><a href="" onclick="return confirm('Do you really want to remove this item?')" title="Remove Item">Remove</a></a></td> 
+                     </tr>
+                     <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>Name</td>    
+                        <td>person@email.com</td>       
+                        <td class="center"><a href="" onclick="return confirm('Do you really want to remove this item?')" title="Remove Item">Remove</a></a></td> 
+                     </tr>
+                     <tr class="alternate">
+                        <td><input type="checkbox" /></td>
+                        <td>Name</td>    
+                        <td>person@email.com</td>       
+                        <td class="center"><a href="" onclick="return confirm('Do you really want to remove this item?')" title="Remove Item">Remove</a></a></td> 
+                     </tr>
+                     <tr><td colspan="4" style="background-color:#666;text-align:right;"> <input name="Submit" type="button" value="Update Imported Contacts &raquo;" /></td></tr>
+					</table>	
+                </td>
+            </tr>
+            <tr>
+            	<td class="submit" colspan="2">               
+                  <%= button_to_function raw('Continue &raquo;'), "$('step1').hide(); $('step2').show();" %>
+                </td>
+            </tr>  
+            </table>
+          </div>
+
+          <div id="step2" style="display: none;">
+            <h1><span>Compose Invitation (Step 2 of 3)</span></h1>
+            <table cellspacing="1" cellpadding="0" border="0" class="edit">
+           	<tr>
+            	<td class="label"><label for="emailSubject"><span class="required">* </span>Invitation Subject:</label></td>
+                <td class="field"><input name="emailSubject" type="" id="emailSubject" maxlength="200" value="I'm creating a book for 'PersonsNameHere' and need your help" class="text" /></td>            
+            </tr>
+            <tr>
+               <td class="label"><label for="other"><span class="required">* </span>Invitation Message:</label></td>            
+               <td class="field"><textarea name="other" cols="" rows="9" id="other"></textarea>
+               <p><a id="view">View Sample Invitation Text &raquo;</a></p>
+                	
+               <div id="exampleQuestions">
+                 <ul class="bullets">
+                      <li>Suspendisse nunc urna, sodales non vestibulum et, consectetur non arcu. Suspendisse lectus sem, lobortis at elementum et, euismod eget lectus. Etiam tortor ante, hendrerit sit amet eleifend ut, imperdiet consequat nunc. Vestibulum lectus ligula, suscipit eu lacinia et, semper vitae massa. Duis tempor laoreet lacus eu scelerisque. </li>
+                      <li>Suspendisse nunc urna, sodales non vestibulum et, consectetur non arcu. Suspendisse lectus sem, lobortis at elementum et, euismod eget lectus. Etiam tortor ante, hendrerit sit amet eleifend ut, imperdiet consequat nunc. Vestibulum lectus ligula, suscipit eu lacinia et, semper vitae massa. Duis tempor laoreet lacus eu scelerisque. </li>
+                      <li>Suspendisse nunc urna, sodales non vestibulum et, consectetur non arcu. Suspendisse lectus sem, lobortis at elementum et, euismod eget lectus. Etiam tortor ante, hendrerit sit amet eleifend ut, imperdiet consequat nunc. Vestibulum lectus ligula, suscipit eu lacinia et, semper vitae massa. Duis tempor laoreet lacus eu scelerisque. </li>
+                  </ul>  
+                </div>               </td>
+           	</tr>
+            <tr>
+              <td class="label"><label for="date"><span class="required">* </span>The last day to contribute to this book is:</label>              </td>
+              <td class="field"><input name="date" id="date" maxlength="60" class="smallText"  value="June 7th, 2010" />
+                  <a href=""><img src="images/icon_calendar.gif" alt="" class="icon" /></a>
+                  <p class="note">* Please finalize your book two weeks prior to the event date in order to allow time for printing.</p></td>
+            </tr>
+            <tr>
+              <td class="submit" colspan="2">
+                <%= button_to_function raw('&laquo; Back'), "$('step2').hide(); $('step1').show();" %>
+                <%= button_to_function raw('Finalize Invitation &raquo;'), "$('step2').hide(); $('step3').show();" %>
+              </td>
+            </tr>  
+            </table>
+          </div>
+
+          <div id="step3" style="display: none;">
+            <h1><span>Preview & Finalize Invitation (Step 3 of 3)</span></h1>
+                
+            <table cellspacing="1" cellpadding="0" border="0" class="edit">
+           	<tr><td class="tableHeadColor">&nbsp;</td></tr>
+            <tr>  
+               <td class="field twoCol">
+                 <h1><%= Faker::Lorem.sentence 5 %></h1>
+               <p><%= Faker::Lorem.paragraph 5%></p>
+               <p><%= Faker::Lorem.paragraph 5%></p>
+               <p><%= Faker::Lorem.paragraph 5%></p>
+               <p class="sig">Firstname Lastname</p>
+               <p class="sig">PS Don't forget the last day to contribute to this book is June 7th, 2010!</p></td>
+           </tr> 
+            
+           <tr><td class="field"><input name="" type="checkbox" value="" checked /> 
+             Copy me on this set of invitations</td>
+           </tr>
+            <tr>
+            	<td class="submit">
+                <%= button_to_function raw('&laquo; Revise'), "$('step3').hide(); $('step2').show();" %>
+                <%= f.submit raw('Send Invitations &raquo;') %>
+                <input name="Submit" type="button" value="&laquo; Revise" onClick="window.location.href='account_invite2.html'"  />
+                <input name="Submit" type="button" value="Send Invitations &raquo;" onClick="window.location.href='invitationSent.html'"  /></td>
+            </tr>  
+            </table>
+          </div>
+
+<% end %>
